@@ -1,1 +1,1 @@
-alert("toto")
+alert("T'es nul");
