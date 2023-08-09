@@ -1,6 +1,6 @@
 <?php
 
-abstract class bdd {
+abstract class Bdd {
     private $ip = 'localhost';
     private $port = '';
     private $user = 'nounou';
