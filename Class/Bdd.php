@@ -1,4 +1,4 @@
-<?
+<?php
 
 abstract class bdd {
     private $ip = 'localhost';
