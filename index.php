@@ -71,7 +71,10 @@ $session = new Session();
   <input required id="nom" placeholder="Nom" type="text" min="1000" max="2100" name="nom" class="fs-4 m-3">
   <input required id="prenom" placeholder="prénom" type="text" name="prenom" class="fs-4 m-3">
   <input required id="naissance" placeholder="date de naissance" type="date" name="naissance" class="fs-4 m-3">
-  <input required id="role" placeholder="role" type="text" name="role" class="fs-4 m-3">
+  <select name="role" id="role">
+    <option value="parent">parent</option>
+    <option value="nounou">nounou</option>
+  </select>
   
 </form>
 <button class="btn btn-success m-3" value="save" onclick="saveNewBook()" name="saveBook">Save to Data Base</button>
