@@ -16,13 +16,8 @@ $session = new Session();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>I'm IN</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/style.scss" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -65,7 +60,7 @@ $session = new Session();
 
 
 <div id="form-register" class="d-flex flex-column">
-  <form method="POST" id="form-enregistrer" class="mt-5 col-6 card bg-light">
+  <form method="POST" id="form-enregistrer" class="mt-5 card bg-light">
   <h1>Enregistrer</h1>
   <input required id="email" placeholder="email" type="email" name="email" class="fs-4 m-3">
   <input required id="mot-de-passe" placeholder="mot de passe" type="password" name="mot-de-passe" class="fs-4 m-3">
@@ -88,7 +83,15 @@ $session = new Session();
   </div>
 
 
+
+  <?php
+require_once './partsPhp/footer.php';
+
+?>
+
 <script type="module" src="/js/app.js"></script>
 
 </body>
 </html>
+
+
