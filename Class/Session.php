@@ -5,9 +5,12 @@ class Session extends Bdd{
     private $user;
 
     public function __construct(){
-        session_start();
+        //check if session start
+        if(!isset($_SESSION)){
+            session_start();
+        }
         if(isset($_SESSION['id'])){
-            $req = $this->Connect()->prepare("SELECT * FROM identifiant WHERE Id_identifiant = ?");
+            $req = $this->Connect()->prepare("SELECT * FROM identifiant WHERE Id = ?");
             $req->execute(array($_SESSION['id']));
             // $req->execute(array("1"));
             $this->user = $req->fetch();
@@ -18,15 +21,7 @@ class Session extends Bdd{
     }
 
     public function GetRole(){
-        $req_n = $this->Connect()->prepare("SELECT * from nounou WHERE Id_identifiant = ?");
-        $req_n->execute(array($this->user['Id_identifiant']));
-        if($req_n->rowCount() == 0){
-            $req_v = $this->Connect()->prepare("SELECT * from parrent WHERE Id_identifiant =?");
-            $req_v->execute(array($this->user['Id_identifiant']));
-            return "Parent";
-        }else{
-            return "Nounou";
-        }
+        return $this->user['role'];
     }
     public function GetNom(){
         return $this->user['nom'];
@@ -49,7 +44,7 @@ class Session extends Bdd{
 
     public function Login($user){
         $this->user = $user;
-        $_SESSION['id'] = $user['Id_identifiant'];
+        $_SESSION['id'] = $user['Id'];
     }
 
 }

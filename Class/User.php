@@ -1,34 +1,37 @@
 <?php
-    class User
+
+
+    class User extends Bdd
 {
 
     public function __construct()
     {
-        $database = new Bdd();
-        $this->db = $database->Connect();
+        
     }
 
     protected $email;
     protected $password;
     protected $db;
 
-    public function CreateUser($email, $hashedPassword, $nom, $prenom, $dateDeNaissance, $role, $etat, $resetPassword)
+    public function CreateUser($email, $hashedPassword, $nom, $prenom, $dateDeNaissance, $role)
     {
         // Insertion d'un nouvel utilisateur dans la base de données
         //!!! Quel objet instancier, et comment ?
-        $database = new Bdd($this->db);
+        // $database = new Bdd($this->db);
         // return $database->insertUser($email, $hashedPassword);
         try {
+            $tempcode = rand(1000000000, 99999);
             // Préparation de la requête pour insertion dans la base de données
-            $stmt = $this->db->prepare("INSERT INTO identifiant (email, password, nom, prenom, date_de_naissance, role, etat, reset_password) VALUES (:email, :password, :nom, :prenom, :date_de_naissance, :role, :etat, :reset_password)");
+            $stmt = $this->Connect()->prepare("INSERT INTO identifiant (email, password, nom, prenom, date_inscription ,date_de_naissance, role, temp_code) VALUES (:email, :password, :nom, :prenom, NOW() ,:date_de_naissance, :role, :temp_code)");
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $hashedPassword);
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
             $stmt->bindParam(':date_de_naissance', $dateDeNaissance);
             $stmt->bindParam(':role', $role);
-            $stmt->bindParam(':etat', $etat);
-            $stmt->bindParam(':reset_password', $resetPassword);
+            $stmt->bindParam(':temp_code', $tempcode);
+            $mail = new Mail();
+            $mail->sendEmail($email, "Validation du compte", $tempcode);
             //Obliger le remplissage champs SAUF etat et reset_password
         if (empty($email) || empty($password) || empty($nom) || empty($prenom) || empty($dateDeNaissance) || empty($role)) {
             return false;
@@ -49,7 +52,7 @@
     public function getUser($email)
     {
         try {
-            $stmt = $this->db->prepare("SELECT * FROM identifiant WHERE email = :email");
+            $stmt = $this->Connect()->prepare("SELECT * FROM identifiant WHERE email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
 
@@ -89,7 +92,8 @@
         // Vérifier la correspondance entre le mot de passe et son hashage
         if ($user && password_verify($password, $user['password'])) {
             //Attribution du nom d'utilisateur comme valeur de session
-            $_SESSION['username'] = $user['email'];
+            $session = new Session();
+            $session->Login($user);
             return true;
         }
 
