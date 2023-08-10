@@ -1,6 +1,6 @@
 <?php
 require_once './partsPhp/header.php';
-
+var_dump($_POST);
 $session = new Session();
 // $mail = new Mail();
 
@@ -77,7 +77,7 @@ $session = new Session();
   </select>
   
 </form>
-<button class="btn btn-success m-3" value="save" onclick="saveNewBook()" name="saveBook">Save to Data Base</button>
+<button class="btn btn-success m-3" value="save" id="saveBook">Save to Data Base</button>
 
 </div>
 
@@ -85,7 +85,7 @@ $session = new Session();
   </div>
 
 
-<script src="/js/app.js"></script>
+<script type="module" src="/js/app.js"></script>
 
 </body>
 </html>
