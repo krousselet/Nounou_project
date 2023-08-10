@@ -68,12 +68,13 @@ $session = new Session();
   <form method="POST" id="form-enregistrer" class="mt-5 col-6 card bg-light">
   <h1>Enregistrer</h1>
   <input required id="email" placeholder="email" type="email" name="email" class="fs-4 m-3">
-  <input required id="mot-de-passe" placeholder="mot de passe" type="text" name="mot-de-passe" class="fs-4 m-3">
-  <input required id="mot-de-passe-verif" placeholder="mot de passe Vérif" type="text" name="mot-de-passe-verif" class="fs-4 m-3">
+  <input required id="mot-de-passe" placeholder="mot de passe" type="password" name="mot-de-passe" class="fs-4 m-3">
+  <input required id="mot-de-passe-verif" placeholder="mot de passe Vérif" type="password" name="mot-de-passe-verif" class="fs-4 m-3">
   <input required id="nom" placeholder="Nom" type="text" min="1000" max="2100" name="nom" class="fs-4 m-3">
   <input required id="prenom" placeholder="prénom" type="text" name="prenom" class="fs-4 m-3">
   <input required id="naissance" placeholder="date de naissance" type="date" name="naissance" class="fs-4 m-3">
-  <select name="role" id="role">
+  <input type="tel" name="tel" id="tel" class="fs-4 m-3">
+  <select name="role" id="role" class="fs-4 m-3">
     <option value="parent">parent</option>
     <option value="nounou">nounou</option>
   </select>
