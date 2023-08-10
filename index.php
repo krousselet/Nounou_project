@@ -41,13 +41,13 @@ $mail = new Mail();
   <div class="searchBars d-flex flex-column col-4 m-5">
   <h1>Connexion</h1>
 
-  <form method="GET" class="d-flex flex-column ">
+  <form method="POST" class="d-flex flex-column ">
 
  <label for="title">Mail</label>
- <input onfocusout="focusOutEventTitle()" type="text" id="titlesearch" name="titleSearch" oninput="getTitle()">
+ <input  type="text" id="mail-connect" name="mail-connect" >
 
  <label for="author">Mot de passe</label>
- <input onfocusout="focusOutEventAuthor()" type="text" id="authorsearch" name="authorSearch" oninput="getAuthor()">
+ <input  type="text" id="mdp-connect" name="mdp-connect" >
 
 </form>
 
@@ -62,15 +62,16 @@ $mail = new Mail();
   </div>
 
 
-<div class="d-flex flex-column">
-  <form method="GET" id="form" class="mt-5 col-6 card bg-light">
+<div id="form-register" class="d-flex flex-column">
+  <form method="POST" id="form-enregistrer" class="mt-5 col-6 card bg-light">
   <h1>Enregistrer</h1>
-  <input required id="email" placeholder="email" type="text" name="titlesave" class="fs-4 m-3">
-  <input required id="mot-de-passe" placeholder="mot de passe" type="text" name="authorsave" class="fs-4 m-3">
-  <input required id="nom" placeholder="Nom" type="number" min="1000" max="2100" name="releasedatesave" class="fs-4 m-3">
-  <input required id="prenom" placeholder="prénom" type="text" name="editorsave" class="fs-4 m-3">
-  <input required id="naissance" placeholder="date de naissance" type="text" name="editorsave" class="fs-4 m-3">
-  <input required id="role" placeholder="role" type="text" name="editorsave" class="fs-4 m-3">
+  <input required id="email" placeholder="email" type="email" name="email" class="fs-4 m-3">
+  <input required id="mot-de-passe" placeholder="mot de passe" type="text" name="mot-de-passe" class="fs-4 m-3">
+  <input required id="mot-de-passe-verif" placeholder="mot de passe Vérif" type="text" name="mot-de-passe-verif" class="fs-4 m-3">
+  <input required id="nom" placeholder="Nom" type="text" min="1000" max="2100" name="nom" class="fs-4 m-3">
+  <input required id="prenom" placeholder="prénom" type="text" name="prenom" class="fs-4 m-3">
+  <input required id="naissance" placeholder="date de naissance" type="date" name="naissance" class="fs-4 m-3">
+  <input required id="role" placeholder="role" type="text" name="role" class="fs-4 m-3">
   
 </form>
 <button class="btn btn-success m-3" value="save" onclick="saveNewBook()" name="saveBook">Save to Data Base</button>
