@@ -55,3 +55,11 @@ class Session extends Bdd{
 }
 
 ?>
+
+<html>
+<?php if(!empty($username)) { ?>
+    <a href="" class="">ICI</a>
+    <a href="">LA</a>
+
+<?php }?>
+</html>
