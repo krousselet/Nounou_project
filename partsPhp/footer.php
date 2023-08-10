@@ -12,7 +12,7 @@ spl_autoload_register(function ($class_name) {
 
 ?>
 
-<div class="footer text-center">Créer par 
+<div class="footer text-center">Crée par 
   <a href="#">J.François</a>, 
     <a href="#">J.Lambert</a>
   <a href="#">K.Rousselet</a>
