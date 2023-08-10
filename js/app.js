@@ -36,5 +36,14 @@ function saveNewBook(){
     let password2 = document.querySelector("#form-register #mot-de-passe-verif").value;
     let date_naissance = document.querySelector("#form-register #naissance").value;
     let role = document.querySelector("#form-register #role").value;
+    if(password!= password2){
+        alert("Les mots de passe ne correspondent pas");
+        return;
+    }
+    if(nom == "" || prenom == "" || email == "" || password == "" || password2 == "" || date_naissance == "" || role == ""){
+        alert("Veuillez remplir tous les champs");
+        return;
+    }
+    
     console.log(nom, prenom, email, password, password2, date_naissance, role);
 }
