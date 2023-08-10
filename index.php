@@ -53,7 +53,7 @@ $session = new Session();
 
 </form>
 
-<button id="btnSearch"  class="btn btn-success m-3" value="search" onclick="getFullBook()" name="searchBook">Search</button>
+<button id="btnSearch"  class="btn btn-success m-3" value="search" id="Login">Search</button>
  
 
   <div class="result-menu result-menu-title flex-column"></div>
@@ -80,7 +80,7 @@ $session = new Session();
   </select>
   
 </form>
-<button class="btn btn-success m-3" value="save" id="saveBook">Save to Data Base</button>
+<button class="btn btn-success m-3" value="save" id="Register">Save to Data Base</button>
 
 </div>
 

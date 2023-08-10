@@ -26,9 +26,23 @@ function getFullBook() {
   xhr.send();
 }
 
-document.querySelector('#saveBook').addEventListener('click', saveNewBook);
+document.querySelector('#Register').addEventListener('click', Register);
+document.querySelector('#Login').addEventListener('click', Login);
 
-function saveNewBook(){
+
+function Login(){
+    let email = document.querySelector("#form-login #email").value;
+    let password = document.querySelector("#form-login #mot-de-passe").value;
+    if(email == "" || password == ""){
+        alert("Veuillez remplir tous les champs");
+        return;
+    }
+    panda.ajax('./ajax/ajax.php', {action:"login",email:email,password:password}, (e) => {
+        // alert(e);
+    });
+}
+
+function Register(){
     let nom = document.querySelector("#form-register #nom").value;
     let prenom = document.querySelector("#form-register #prenom").value;
     let email = document.querySelector("#form-register #email").value;
@@ -46,6 +60,6 @@ function saveNewBook(){
         return;
     }
     panda.ajax('./ajax/ajax.php', {action:"add",nom:nom,prenom:prenom,email:email,password:password,date_naissance:date_naissance,role:role,tel:tel}, (e) => {
-        alert(e);
+        // alert(e);
     });
 }
