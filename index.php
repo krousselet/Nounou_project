@@ -82,7 +82,15 @@ $session = new Session();
   </div>
 
 
+
+  <?php
+require_once './partsPhp/footer.php';
+
+?>
+
 <script type="module" src="/js/app.js"></script>
 
 </body>
 </html>
+
+
