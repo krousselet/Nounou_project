@@ -1,5 +1,8 @@
 import Panda from "https://pandatown.fr/lib/pandalib.php";
 
+//panda.ajax(url, data , callback)
+//panda.ajax("./endpoint.php", {id:1}, (e) => {console.log("Reponse",e)})
+
 function getFullBook() {
   let titleLength = document.getElementById("titlesearch");
   let authorLength = document.getElementById("authorsearch");
