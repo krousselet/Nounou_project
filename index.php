@@ -1,6 +1,6 @@
 <?php
 require_once './partsPhp/header.php';
-
+var_dump($_POST);
 $session = new Session();
 // $mail = new Mail();
 
@@ -17,13 +17,15 @@ $session = new Session();
     <meta name="description" content="">
     <title>I'm IN</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/style/style.scss" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 
 </head>
 
@@ -71,14 +73,10 @@ $session = new Session();
   <input required id="nom" placeholder="Nom" type="text" min="1000" max="2100" name="nom" class="fs-4 m-3">
   <input required id="prenom" placeholder="prénom" type="text" name="prenom" class="fs-4 m-3">
   <input required id="naissance" placeholder="date de naissance" type="date" name="naissance" class="fs-4 m-3">
-  <select required id="role" name="role" class="fs-4 m-3">
-    <option value="" disabled selected>Choisissez un rôle :</option>
-    <option value="nounou">Nounou</option>
-    <option value="parent">Parent</option>
-</select>
+  <input required id="role" placeholder="role" type="text" name="role" class="fs-4 m-3">
   
 </form>
-<button class="btn btn-success m-3" value="save" onclick="saveNewBook()" name="saveBook">Save to Data Base</button>
+<button class="btn btn-success m-3" value="save" id="saveBook">Save to Data Base</button>
 
 </div>
 
@@ -86,7 +84,7 @@ $session = new Session();
   </div>
 
 
-<script src="/js/app.js"></script>
+<script type="module" src="/js/app.js"></script>
 
 </body>
 </html>

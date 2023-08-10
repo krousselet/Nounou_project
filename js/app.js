@@ -1,4 +1,7 @@
-import Panda from "https://pandatown.fr/lib/pandalib.php";
+import { panda } from 'https://pandatown.fr/lib/pandalib.php';
+
+//panda.ajax(url, data , callback)
+//panda.ajax("./endpoint.php", {id:1}, (e) => {console.log("Reponse",e)})
 
 function getFullBook() {
   let titleLength = document.getElementById("titlesearch");
@@ -21,4 +24,26 @@ function getFullBook() {
     }
   };
   xhr.send();
+}
+
+document.querySelector('#saveBook').addEventListener('click', saveNewBook);
+
+function saveNewBook(){
+    let nom = document.querySelector("#form-register #nom").value;
+    let prenom = document.querySelector("#form-register #prenom").value;
+    let email = document.querySelector("#form-register #email").value;
+    let password = document.querySelector("#form-register #mot-de-passe").value;
+    let password2 = document.querySelector("#form-register #mot-de-passe-verif").value;
+    let date_naissance = document.querySelector("#form-register #naissance").value;
+    let role = document.querySelector("#form-register #role").value;
+    if(password!= password2){
+        alert("Les mots de passe ne correspondent pas");
+        return;
+    }
+    if(nom == "" || prenom == "" || email == "" || password == "" || password2 == "" || date_naissance == "" || role == ""){
+        alert("Veuillez remplir tous les champs");
+        return;
+    }
+    
+    console.log(nom, prenom, email, password, password2, date_naissance, role);
 }
