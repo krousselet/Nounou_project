@@ -12,14 +12,12 @@ body {
   min-height: 100vh;
 }
 
-.upper-background {
+#upper-background {
+  margin-top: 200px;
+  position: relative;
   width: 100vw;
   height: 33vh;
-  background-image: url("ressourcesimagesÚshboardhead.svg");
-}
-
-#form-register {
-  width: 600px;
+  background-image: url("ressourcesimagesÚshboardupper-motif.svg");
 }
 
 #offcanvasNavbar {

@@ -1,9 +1,29 @@
-// Couleurs principales = bleu / jaune / orange cf BORDERLANDS --> MALIWAN
+.comment.comment {
+    padding: 0;
+    // Couleurs principales = bleu / jaune / orange cf BORDERLANDS --> MALIWAN
 
-// #CD6130 = orange / #132531 = bleu
+    // #CD6130 = orange / #132531 = bleu
+}
 
-.upper-background {
+.happy-body-container {
+    position: relative;
+    margin-top: 100px;
     width: 100vw;
-    height: 33vh;
-    background-image: url('ressources\images\dashboard\head.svg');
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .happy-body {
+        width: inherit;
+        height: inherit;
+    }
+
+    .blur {
+        background-color: transparent;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        z-index: 10;
+    }
 }
