@@ -2,16 +2,16 @@
 
 class Session extends Bdd{
 
-    private $user;
+    private $user = null;
 
     public function __construct(){
         //check if session start
         if(!isset($_SESSION)){
             session_start();
         }
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['Id'])){
             $req = $this->Connect()->prepare("SELECT * FROM identifiant WHERE Id = ?");
-            $req->execute(array($_SESSION['id']));
+            $req->execute(array($_SESSION['Id']));
             // $req->execute(array("1"));
             $this->user = $req->fetch();
             // $this->user = $_SESSION['id'];
@@ -44,17 +44,9 @@ class Session extends Bdd{
 
     public function Login($user){
         $this->user = $user;
-        $_SESSION['id'] = $user['Id'];
+        $_SESSION['Id'] = $user['Id'];
     }
 
 }
 
 ?>
-
-<html>
-<?php if(!empty($username)) { ?>
-    <a href="" class="">ICI</a>
-    <a href="">LA</a>
-
-<?php }?>
-</html>

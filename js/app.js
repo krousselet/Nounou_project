@@ -28,11 +28,18 @@ function getFullBook() {
 
 document.querySelector('#Register').addEventListener('click', Register);
 document.querySelector('#Login').addEventListener('click', Login);
+document.querySelector('#Logout').addEventListener('click', Logout);
 
+
+function Logout(){
+    panda.ajax('./ajax/ajax.php', {action:"logout"}, (e) => {
+        // alert(e);
+    });
+}
 
 function Login(){
-    let email = document.querySelector("#form-login #email").value;
-    let password = document.querySelector("#form-login #mot-de-passe").value;
+    let email = document.querySelector("#form-login #mail-connect").value;
+    let password = document.querySelector("#form-login #mdp-connect").value;
     if(email == "" || password == ""){
         alert("Veuillez remplir tous les champs");
         return;

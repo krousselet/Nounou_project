@@ -20,13 +20,16 @@
         // $database = new Bdd($this->db);
         // return $database->insertUser($email, $hashedPassword);
         //Obliger le remplissage champs SAUF etat et reset_password
+
+       
         if (empty($email) || empty($password) || empty($nom) || empty($prenom) || empty($tel) || empty($dateDeNaissance) || empty($role)) {
             return false;
         }
+        // if($this->get)
         try {
             $tempcode = rand(1000000000, 99999);
             // Préparation de la requête pour insertion dans la base de données
-            $stmt = $this->Connect()->prepare("INSERT INTO identifiant (email, mot_de_passe, nom, prenom, date_inscription ,date_naissance, role,tel, temp_code, etat) VALUES (:email, :password, :nom, :prenom, NOW() ,:date_de_naissance, :role, :tel, :temp_code,0)");
+            $stmt = $this->Connect()->prepare("INSERT INTO identifiant (email, mot_de_passe, nom, prenom, date_inscription ,date_naissance, role, tel, temp_code, etat) VALUES (:email, :password, :nom, :prenom, NOW() ,:date_de_naissance, :role, :tel, :temp_code, 0)");
             $stmt->bindParam(':email', $email);
             $hashedPassword = password_hash("Panda".$password."Town", PASSWORD_DEFAULT);
             $stmt->bindParam(':password', $hashedPassword);
@@ -52,7 +55,6 @@
             $stmt = $this->Connect()->prepare("SELECT * FROM identifiant WHERE email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
-
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             return $user;
@@ -85,13 +87,12 @@
 
         //Récupérer l'utilisateur dans la base de données
         $user = $this->getUser($email);
-
+        // var_dump($user);
         // Vérifier la correspondance entre le mot de passe et son hashage
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && password_verify("Panda".$password."Town", $user['mot_de_passe'])) {
             //Attribution du nom d'utilisateur comme valeur de session
-            $session = new Session();
-            $session->Login($user);
-            return true;
+            
+            return $user;
         }
 
         return false;

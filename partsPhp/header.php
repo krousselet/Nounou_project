@@ -25,7 +25,7 @@ spl_autoload_register(function ($class_name) {
 });
 
 ?>
-
+<body>
 <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
     <img src="./img/Logo.png" alt="bug" id="logo-nav">
