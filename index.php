@@ -48,7 +48,7 @@ $session = new Session();
 
 </form>
 
-<button id="btnSearch"  class="btn btn-success m-3" value="search" onclick="getFullBook()" name="searchBook">Search</button>
+<button id="btnSearch"  class="btn btn-success m-3" value="search" id="Login">Search</button>
  
 
   <div class="result-menu result-menu-title flex-column"></div>
@@ -68,14 +68,13 @@ $session = new Session();
   <input required id="nom" placeholder="Nom" type="text" min="1000" max="2100" name="nom" class="fs-4 m-3">
   <input required id="prenom" placeholder="prénom" type="text" name="prenom" class="fs-4 m-3">
   <input required id="naissance" placeholder="date de naissance" type="date" name="naissance" class="fs-4 m-3">
-  <input type="tel" name="tel" id="tel" class="fs-4 m-3">
-  <select name="role" id="role" class="fs-4 m-3">
+  <select name="role" id="role">
     <option value="parent">parent</option>
     <option value="nounou">nounou</option>
   </select>
   
 </form>
-<button class="btn btn-success m-3" value="save" id="saveBook">Save to Data Base</button>
+<button class="btn btn-success m-3" value="save" id="Register">Save to Data Base</button>
 
 </div>
 
