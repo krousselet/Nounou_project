@@ -13,7 +13,6 @@ if(isset($_POST['action'])){
             $result = $user->login($_POST['email'], $_POST['password']);
             echo $result;
             break;
-        case'register':
         default:
             break;
     }
