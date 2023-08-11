@@ -1,5 +1,6 @@
 <?php
-require_once './partsPhp/header.php';
+require_once __DIR__.'/partsPhp/header.php';
+var_dump(__DIR__);
 ?>
 
 <!DOCTYPE html>
