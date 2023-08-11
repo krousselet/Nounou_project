@@ -21,3 +21,7 @@ spl_autoload_register(function ($class_name) {
 <a href="#" >Mentions légales</a>
 </div>
 
+<script type="module" src="/js/app.js"></script>
+
+</body>
+</html>

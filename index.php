@@ -15,10 +15,9 @@ if($session->isLogin()){?>
 // $mail = new Mail();
 
 // $mail->sendEmail('shaefferaelita@gmail.com','test','test');
-
-
 ?>
 
+<<<<<<< HEAD
   <form>
     
       <button class="btn btn-danger m-3" value="logout" type="submit" name="logoutbtn" id="Logout">Log Out</button>
@@ -74,17 +73,19 @@ if($session->isLogin()){?>
 
 
   </div>
+=======
+<?php require_once './partsPhp/register.php';?>
+>>>>>>> b0739064da3c6d320d947bd9b6d6cd8c837f6a62
 
 
 
-  <?php
+
+
+<?php
 require_once './partsPhp/footer.php';
 
 ?>
 
-<script type="module" src="/js/app.js"></script>
 
-</body>
-</html>
 
 
