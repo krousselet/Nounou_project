@@ -26,9 +26,10 @@ spl_autoload_register(function ($class_name) {
 
 ?>
 
+<body>
 <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <img src="./img/Logo.png" alt="bug" id="logo-nav">
+    <img src="./img/Logo.png" alt="Logo" id="logo-nav">
     <a class="navbar-brand" href="#">Nounou Project X</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

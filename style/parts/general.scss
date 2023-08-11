@@ -1,12 +1,35 @@
 *,
 ::before,
 ::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    min-width: 100vw;
-    min-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  #logo-nav {
+    height: 50px;
+    width: 50px;
+  }
+
+  #backdrop-filter-connect {
+    background-image: url(../../img/family-1866868_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+
+    #form-register {
+      backdrop-filter: blur(4px);
+
+      #form-register-champ {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+    }
+  }
 }
