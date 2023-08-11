@@ -60,7 +60,7 @@ $session = new Session();
 
 
 <div id="form-register" class="d-flex flex-column">
-  <form method="POST" id="form-enregistrer" class="mt-5 col-6 card bg-light">
+  <form method="POST" id="form-enregistrer" class="mt-5 card bg-light">
   <h1>Enregistrer</h1>
   <input required id="email" placeholder="email" type="email" name="email" class="fs-4 m-3">
   <input required id="mot-de-passe" placeholder="mot de passe" type="password" name="mot-de-passe" class="fs-4 m-3">
