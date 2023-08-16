@@ -1,9 +1,3 @@
-<?php
-require_once __DIR__.'/partsPhp/header.php';
-?>
-
-<body>
-    
   <div class="happy-body-container">
     <img src="./img/dashboard/happy-body.svg" class="moving-rect happy-body" alt="image d'une personne les bras ouverts" srcset="./img/dashboard/happy-body-desktop.svg 2048w" sizes="(max-width: 2048px) 100vw, 50vw">
     <div class="blur">
@@ -24,10 +18,6 @@ require_once __DIR__.'/partsPhp/header.php';
         </form>  
       </div>
       <div id="calendar"></div>
-    </div>
-  </div>
-  
-  
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.js"></script>
     <script defer>
