@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.scss" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
@@ -26,10 +28,6 @@ spl_autoload_register(function ($class_name) {
 });
 
 ?>
-<<<<<<< HEAD
-=======
-
->>>>>>> b0739064da3c6d320d947bd9b6d6cd8c837f6a62
 <body>
 <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">

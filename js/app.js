@@ -4,26 +4,26 @@ import { panda } from 'https://pandatown.fr/lib/pandalib.php';
 //panda.ajax("./endpoint.php", {id:1}, (e) => {console.log("Reponse",e)})
 
 function getFullBook() {
-  let titleLength = document.getElementById("titlesearch");
-  let authorLength = document.getElementById("authorsearch");
+    let titleLength = document.getElementById("titlesearch");
+    let authorLength = document.getElementById("authorsearch");
 
-  //LIEN DU FICHIER PHP ETFONCTION PHP
-  let url = "endpoint.php?action=search";
+    //LIEN DU FICHIER PHP ETFONCTION PHP
+    let url = "endpoint.php?action=search";
 
-  let xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
 
-  //CHOISIR GET OU POST SELON MDP
-  xhr.open("GET", url, true);
+    //CHOISIR GET OU POST SELON MDP
+    xhr.open("GET", url, true);
 
-  xhr.onload = function () {
-    if (this.status == 200) {
-      //RECUPERE LA REPONSE
-      let data = JSON.parse(this.responseText);
-      //INSERER CODE FONCTION
-      console.log(data);
-    }
-  };
-  xhr.send();
+    xhr.onload = function () {
+        if (this.status == 200) {
+            //RECUPERE LA REPONSE
+            let data = JSON.parse(this.responseText);
+            //INSERER CODE FONCTION
+            console.log(data);
+        }
+    };
+    xhr.send();
 }
 
 document.querySelector('#Register').addEventListener('click', Register);
@@ -37,19 +37,19 @@ function Logout(){
     });
 }
 
-function Login(){
-    let email = document.querySelector("#form-login #mail-connect").value;
-    let password = document.querySelector("#form-login #mdp-connect").value;
-    if(email == "" || password == ""){
+function Login() {
+    let email = document.querySelector("#form-login #email").value;
+    let password = document.querySelector("#form-login #mot-de-passe").value;
+    if (email == "" || password == "") {
         alert("Veuillez remplir tous les champs");
         return;
     }
-    panda.ajax('./ajax/ajax.php', {action:"login",email:email,password:password}, (e) => {
+    panda.ajax('./ajax/ajax.php', { action: "login", email: email, password: password }, (e) => {
         // alert(e);
     });
 }
 
-function Register(){
+function Register() {
     let nom = document.querySelector("#form-register #nom").value;
     let prenom = document.querySelector("#form-register #prenom").value;
     let email = document.querySelector("#form-register #email").value;
@@ -58,15 +58,15 @@ function Register(){
     let date_naissance = document.querySelector("#form-register #naissance").value;
     let role = document.querySelector("#form-register #role").value;
     let tel = document.querySelector("#form-register #tel").value;
-    if(password!= password2){
+    if (password != password2) {
         alert("Les mots de passe ne correspondent pas");
         return;
     }
-    if(nom == "" || prenom == "" || email == "" || password == "" || password2 == "" || date_naissance == "" || role == "" || tel == ""){
+    if (nom == "" || prenom == "" || email == "" || password == "" || password2 == "" || date_naissance == "" || role == "" || tel == "") {
         alert("Veuillez remplir tous les champs");
         return;
     }
-    panda.ajax('./ajax/ajax.php', {action:"add",nom:nom,prenom:prenom,email:email,password:password,date_naissance:date_naissance,role:role,tel:tel}, (e) => {
+    panda.ajax('./ajax/ajax.php', { action: "add", nom: nom, prenom: prenom, email: email, password: password, date_naissance: date_naissance, role: role, tel: tel }, (e) => {
         // alert(e);
     });
 }

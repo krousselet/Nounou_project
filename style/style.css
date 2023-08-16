@@ -24,11 +24,31 @@ body #backdrop-filter-connect #form-register {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
 }
-body #backdrop-filter-connect #form-register #form-register-champ {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.styled-button {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #FF6C17;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.styled-button:hover {
+  background-color: rgba(255, 108, 23, 0.8823529412);
+}
+
+.comment.comment {
+  padding: 0;
 }
 
 .upper-background {
@@ -36,11 +56,28 @@ body #backdrop-filter-connect #form-register #form-register-champ {
   height: 33vh;
   background-image: url("ressourcesimagesÚshboardhead.svg");
 }
-
-#form-register {
-  width: 600px;
+.happy-body-container .happy-body {
+  width: inherit;
+  height: inherit;
+}
+.happy-body-container .blur {
+  background-color: transparent;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  z-index: 10;
 }
 
+@keyframes fadeInLetters {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #offcanvasNavbar {
   background: rgb(255, 108, 23);
   background: linear-gradient(15deg, rgb(255, 108, 23) 40%, rgb(19, 37, 49) 50%);
