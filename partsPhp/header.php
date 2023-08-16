@@ -8,6 +8,7 @@
     <title>I'm IN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.css" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.scss" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -27,10 +28,10 @@ spl_autoload_register(function ($class_name) {
 });
 
 ?>
-
+<body>
 <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <img src="./img/Logo.png" alt="bug" id="logo-nav">
+    <img src="./img/Logo.png" alt="Logo" id="logo-nav">
     <a class="navbar-brand" href="#">Nounou Project X</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
