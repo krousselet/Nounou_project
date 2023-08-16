@@ -45,7 +45,6 @@ require_once __DIR__.'/partsPhp/header.php';
     end: '2023-08-15T09:30:00',
   },
       ],
-      // Other options...
     });
 
     calendar.render();
