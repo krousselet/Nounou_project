@@ -26,10 +26,6 @@ spl_autoload_register(function ($class_name) {
 });
 
 ?>
-<<<<<<< HEAD
-=======
-
->>>>>>> b0739064da3c6d320d947bd9b6d6cd8c837f6a62
 <body>
 <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
