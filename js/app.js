@@ -38,8 +38,8 @@ function Logout(){
 }
 
 function Login() {
-    let email = document.querySelector("#form-login #email").value;
-    let password = document.querySelector("#form-login #mot-de-passe").value;
+    let email = document.querySelector("#form-login #mail-connect").value;
+    let password = document.querySelector("#form-login #mdp-connect").value;
     if (email == "" || password == "") {
         alert("Veuillez remplir tous les champs");
         return;
@@ -57,7 +57,7 @@ function Register() {
     let password2 = document.querySelector("#form-register #mot-de-passe-verif").value;
     let date_naissance = document.querySelector("#form-register #naissance").value;
     let role = document.querySelector("#form-register #role").value;
-    let tel = document.querySelector("#form-register #tel").value;
+    let tel = document.querySelector("#form-register #telephone").value;
     if (password != password2) {
         alert("Les mots de passe ne correspondent pas");
         return;
