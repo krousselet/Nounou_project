@@ -1,0 +1,48 @@
+.form-log-reg {
+  border-color: #ff6c17;
+  border-width: 3px;
+}
+
+.btn-custom-color {
+  background-color: #ff6c17;
+  border-color: #ff6c17;
+  color: #ffffff;
+}
+
+.btn-custom-color:hover {
+  background-color: #ff8945;
+  border-color: #ff8945;
+  color: #ffffff;
+}
+
+.register-input {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 10px;
+}
+
+.register-input:focus-visible {
+  border-color: #ff6c17;
+  outline: none;
+}
+
+.register-label {
+  margin-left: 3%;
+}
+
+.connect-label {
+  margin-left: 3%;
+}
+
+.connect-input {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 10px;
+}
+
+.connect-input:focus-visible {
+  border-color: #ff6c17;
+  outline: none;
+}
