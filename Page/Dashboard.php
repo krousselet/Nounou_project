@@ -19,6 +19,11 @@
       </div>
       <div id="calendar"></div>
     </div>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.js"></script>
+  <script defer>
+document.addEventListener('DOMContentLoaded', function () {
+  const calendarEl = document.getElementById('calendar');
 </div>
     <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.js"></script>
     <script defer>
@@ -38,8 +43,8 @@
       ],
     });
 
-    calendar.render();
-  });
-  </script>
+  calendar.render();
+});
+</script>
 </body>
 </html>
