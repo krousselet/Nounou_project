@@ -7,12 +7,12 @@
 
 .happy-body-container {
     position: relative;
-    margin-top: 100px;
-    width: 100vw;
+    width: 98vw;
     height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 100px auto 0 auto;
 
     .happy-body {
         width: inherit;
