@@ -1,0 +1,14 @@
+.btns-accueil {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  gap: 20px;
+  .btn-accueil {
+    width: 200px;
+    height: 200px;
+    background-color: #ff6c17;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: white;
+  }
+}

@@ -4,8 +4,6 @@
 // $mail->sendEmail('shaefferaelita@gmail.com','test','test');
 ?>
 
-<body class="">
-
   <form>
     
       <button class="btn btn-danger m-3" value="logout" type="submit" name="logoutbtn" id="Logout">Log Out</button>
