@@ -32,7 +32,7 @@ const page = {
     },
     Logout : function(){
         panda.ajax('./ajax/ajax.php', {action:"logout"}, (e) => {
-            // alert(e);
+            window.location.href = "./index.php";
         });
     },
     Login : function() {
@@ -43,7 +43,13 @@ const page = {
             return;
         }
         panda.ajax('./ajax/ajax.php', { action: "login", email: email, password: password }, (e) => {
-            // alert(e);
+            console.log(e);
+            if(e == "true") {
+                window.location.href = "./index.php";
+                return;
+            }else{
+                // zone message error
+            }
         });
     },  
     Register : function() {
@@ -64,7 +70,7 @@ const page = {
             return;
         }
         panda.ajax('./ajax/ajax.php', { action: "add", nom: nom, prenom: prenom, email: email, password: password, date_naissance: date_naissance, role: role, tel: tel }, (e) => {
-            // alert(e);
+            //zone message confirmation
         });
     }
 }
