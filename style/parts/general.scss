@@ -1,3 +1,19 @@
+.btn-primary, .bg-primary {
+    background-color: #CD6130 !important;
+    border-color: #CD6130 !important;
+}
+
+/* Pour surcharger la couleur secondaire */
+.btn-secondary, .bg-secondary {
+    background-color: #132531 !important;
+    border-color: #132531 !important;
+}
+
+:root {
+    --bs-primary: #CD6130;
+    --bs-secondary: #132531;
+}
+
 *,
 ::before,
 ::after {
