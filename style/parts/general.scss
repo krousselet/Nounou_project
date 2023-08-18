@@ -1,6 +1,7 @@
-.btn-primary, .bg-primary {
-    background-color: #CD6130 !important;
-    border-color: #CD6130 !important;
+.btn-primary,
+.bg-primary {
+  background-color: #CD6130 !important;
+  border-color: #CD6130 !important;
 }
 
 /* Pour surcharger la couleur secondaire */
@@ -48,6 +49,7 @@ input {
 .styled-button:hover {
   background-color: #ff6c17e1;
 }
+
 *,
 ::before,
 ::after {
@@ -81,4 +83,26 @@ input {
 
 .styled-button:hover {
   background-color: #ff6c17e1;
+}
+
+/* Personnalisation des scrollbars aux couleurs du thème */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ff6c17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d98b5;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 20px 7px rgb(255, 255, 255);
+  height: 10%;
+
 }
