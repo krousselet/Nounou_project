@@ -28,40 +28,42 @@ $session = new Session(); ?>
 <body>
 
 <nav class="navbar navbar-expand-lg bg-primary text-light">
-    <!-- Logo à gauche -->
-    <a class="navbar-brand text-light" href="#"><img src="./img/Logo.png" alt="Logo" height="32" loading="Nounou Project X"> Nounou Project X</a>
+    <div class="container-fluid">
+        <!-- Logo à gauche -->
+        <a class="navbar-brand text-light" href="#"><img src="./img/Logo.png" alt="Logo" height="32" loading="Nounou Project X"> Nounou Project X</a>
 
-    <!-- Bouton pour les écrans de petite taille -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Bouton pour les écrans de petite taille -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Menu à droite -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-light btn_home" href="">Accueil</a>
-            </li>
-            <?php if($session->isLogin()){?>
+        <!-- Menu à droite -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light btn_dash">Dashboard</a>
+                    <a class="nav-link text-light btn_home" href="">Accueil</a>
                 </li>
-            <?php }?>
-            <!-- Dropdown pour le compte -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-light" href="#s" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Compte
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end bg-secondary" aria-labelledby="accountDropdown">
-                    <?php if($session->isLogin()) { ?>
-                      <li><a class="dropdown-item btn_profil text-light" href="#">Profil</a></li>
-                      <li><a class="dropdown-item btn_logout text-light" href="#">Déconnexion</a></li>
-                    <?php }else{?>
-                      <li><a class="dropdown-item btn_login text-light" href="#">Connexion</a></li>
-                      <li><a class="dropdown-item btn_regis text-light" href="#">Inscription</a></li>
-                    <?php }?>
-                </ul>
-            </li>
-        </ul>
+                <?php if($session->isLogin()){?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light btn_dash">Dashboard</a>
+                    </li>
+                <?php }?>
+                <!-- Dropdown pour le compte -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#s" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Compte
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-secondary" aria-labelledby="accountDropdown">
+                        <?php if($session->isLogin()) { ?>
+                        <li><a class="dropdown-item btn_profil text-light" href="#">Profil</a></li>
+                        <li><a class="dropdown-item btn_logout text-light" href="#">Déconnexion</a></li>
+                        <?php }else{?>
+                        <li><a class="dropdown-item btn_login text-light" href="#">Connexion</a></li>
+                        <li><a class="dropdown-item btn_regis text-light" href="#">Inscription</a></li>
+                        <?php }?>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
