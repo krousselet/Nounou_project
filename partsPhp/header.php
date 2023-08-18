@@ -40,11 +40,13 @@ $session = new Session(); ?>
     <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-light" href="">Accueil</a>
+                <a class="nav-link text-light btn_home" href="">Accueil</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="">Dashboard</a>
-            </li>
+            <?php if($session->isLogin()){?>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn_dash">Dashboard</a>
+                </li>
+            <?php }?>
             <!-- Dropdown pour le compte -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" href="#s" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

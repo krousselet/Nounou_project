@@ -12,15 +12,18 @@ let app = {
             let logout = document.querySelector('nav .btn_logout');
             console.log(login);
             if(login){
-                login.addEventListener('click', ()=>{
+                login.addEventListener('click', (e)=>{
+                    e.preventDefault();
                     app.base.updatepage('Login');
                 });
-                document.querySelector('nav .btn_regis').addEventListener('click', ()=>{
+                document.querySelector('nav .btn_regis').addEventListener('click', (e)=>{
+                    e.preventDefault();
                     app.base.updatepage('Login');
                 });
             }
             if(logout){
-                logout.addEventListener('click', ()=>{
+                logout.addEventListener('click', (e)=>{
+                    e.preventDefault();
                     panda.ajax('./ajax/ajax.php', { action: "logout"}, (e) => {
                         if(e == "true") {
                             window.location.href = "./index.php";
@@ -28,7 +31,15 @@ let app = {
                         }
                     });
                 });
+                document.querySelector('nav .btn_dash').addEventListener('click', (e)=>{
+                    e.preventDefault();
+                    app.base.updatepage('Dashboard');
+                })
             }
+            document.querySelector('nav .btn_home').addEventListener('click', (e)=>{
+                e.preventDefault();
+                app.base.updatepage('Accueil');
+            })
         }
     },
     base : {
@@ -47,5 +58,5 @@ let app = {
     },
     page : null,
 }
-app.base.updatepage('Acceuil');
+app.base.updatepage('Accueil');
 app.nav.init();
