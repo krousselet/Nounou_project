@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/partsPhp/header.php';
-var_dump($_POST);
+// var_dump($_POST);
 $session = new Session();
 
 // if($session->isLogin()){
