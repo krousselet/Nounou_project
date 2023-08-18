@@ -8,8 +8,9 @@ $session = new Session();
 // }else{
 //   include __DIR__.'/Page/Login.php';
 // }
-
+echo "<section id='page'>";
 include __DIR__.'/Page/Accueil.php';
+echo "</section>";
 ?> 
 
 <?php

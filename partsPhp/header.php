@@ -52,7 +52,7 @@ $session = new Session(); ?>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end bg-secondary" aria-labelledby="accountDropdown">
                     <?php if($session->isLogin()) { ?>
-                      <li><a class="dropdown-item btn_login text-light" href="#">Profil</a></li>
+                      <li><a class="dropdown-item btn_profil text-light" href="#">Profil</a></li>
                       <li><a class="dropdown-item btn_logout text-light" href="#">Déconnexion</a></li>
                     <?php }else{?>
                       <li><a class="dropdown-item btn_login text-light" href="#">Connexion</a></li>
