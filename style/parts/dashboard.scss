@@ -6,13 +6,13 @@
 }
 
 .happy-body-container {
-  position: relative;
-  margin-top: 100px;
-  width: 100vw;
-  height: 800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    width: 98vw;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
 
   .happy-body {
     width: inherit;
