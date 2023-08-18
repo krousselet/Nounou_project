@@ -5,15 +5,14 @@
 }
 
 /* Pour surcharger la couleur secondaire */
-.btn-secondary,
-.bg-secondary {
-  background-color: #132531 !important;
-  border-color: #132531 !important;
+.btn-secondary, .bg-secondary {
+    background-color: #0d98b5 !important;
+    border-color: #0d98b5 !important;
 }
 
 :root {
-  --bs-primary: #CD6130;
-  --bs-secondary: #132531;
+    --bs-primary: #CD6130;
+    --bs-secondary: #0d98b5;
 }
 
 *,
