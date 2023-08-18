@@ -20,26 +20,3 @@
       <div id="calendar"></div>
     </div>
   </div>
-  <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.js"></script>
-  <script defer>
-  document.addEventListener('DOMContentLoaded', function () {
-    const calendarEl = document.getElementById('calendar');
-
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-      //Représentation sur un mois//
-      initialView: 'dayGridMonth',
-      events: [
-        //objets pour peupler les cellules//
-        {
-    title: 'Jean Euze',
-    start: '2023-08-15T08:00:00',
-    end: '2023-08-15T09:30:00',
-  },
-      ],
-    });
-
-  calendar.render();
-});
-</script>
-</body>
-</html>

@@ -20,6 +20,7 @@ spl_autoload_register(function ($class_name) {
 <div class="text-center">
 <a href="#" >Mentions légales</a>
 </div>
+<script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.js"></script>
 
 <script type="module" src="./js/app.js"></script>
 
