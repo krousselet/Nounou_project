@@ -7,17 +7,21 @@ class Dashboard extends Bdd{
     }
 
     private function Parent() {
-        
+        echo "<button class='btn_d_addChild'>Ajouter un enfant</button>";
     }
 
     private function Child() {
         
     }
+
     private function Nounou() {
-        echo 
+        echo "<button class='btn_d_Charge'>Enfant a charge</button>";
+        echo "<button class='btn_d_calendar'>Agenda</button>";
+        echo "<button class='btn_d_addChild'>Ajouté un enfant</button>";
+        echo "<button class='btn_d_Facture'>Facture</button>";
     }
 
-    public function index(){
+    public function Display(){
         $session = new Session();
         $nom = $session->GetNom();
         $prenom = $session->GetPrenom();
@@ -26,7 +30,7 @@ class Dashboard extends Bdd{
         if($session->GetRole() == "nounou"){
             $this->Nounou();
         }else{
-
+            $this->Parent();
         }
         echo "</div>";
     }
