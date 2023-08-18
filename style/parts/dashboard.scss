@@ -39,6 +39,12 @@
             width: 95%;
             height: 75%;
             margin: 0 auto;
+            transition: all .5s ease
+        }
+
+        #calendar:hover {
+            background-color: rgba(7, 7, 7, 0.589);
+            transition: all .5s ease
         }
     }
 }
