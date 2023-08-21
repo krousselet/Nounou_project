@@ -2,11 +2,12 @@ import { panda } from 'https://pandatown.fr/lib/pandalib.js';
 
 const page = {
     init : function () {
-                document.querySelector('.btn_d_addChild').addEventListener('click', () => {
-          let form = panda.util.newelem('form',{className:"form_d_addChild"});
+        document.querySelector('.btn_d_addChild').addEventListener('click', () => {
+            let form = panda.util.newelem('form',{className:"form_d_addChild"});
             form.appendChild(panda.util.newelem('input',{"type":"text","name":"Child_name","placeholder":"Nom de l'enfant"}));
             form.appendChild(panda.util.newelem('input',{"type":"text","name":"Child_prenom","placeholder":"Prenom de l'enfant"}));
             form.appendChild(panda.util.newelem('input',{"type":"number","name":"Child_age","placeholder":"Age de l'enfant"}));
+            form.appendChild(panda.util.newelem('input',{"type":"number","name":"Child_prix","placeholder":"Tarif horaire"}));
             let sendbtn = panda.util.newelem('input',{"type":"submit","name":"Add_Child","className":"btn_d_addChildS"});
             
             form.appendChild(sendbtn);
