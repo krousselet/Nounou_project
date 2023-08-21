@@ -17,3 +17,12 @@
       <!-- <div id="calendar"></div> -->
     </div>
   </div>
+
+<?php
+// <!-- 
+//   -- Ajouter un selecteur pour nourrir le tableu en fonction des rôles utilisateur
+//   -- Si l'utilisateur est nounou, le calendrier est appellé "agenda". Le sélecteur permettra donc de visualiser les disponibilités des emplacements par nounou
+
+//   -- Si l'utilisateur est parent :
+// -->
+?>
