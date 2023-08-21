@@ -1,4 +1,6 @@
-  <div class="happy-body-container">
+<?php include __DIR__.'/../partsPhp/loader.php';?>
+
+<div class="happy-body-container">
   <img
   src="./img/dashboard/happy-body.svg"
   class="moving-rect happy-body"
@@ -7,7 +9,12 @@
   sizes="(min-width: 320px) and (max-width: 979px) 100vw, (min-width: 980px) and (max-width: 1920px) 970px, 100vw"
   >
     <div class="blur">
-      <div id="calendar"></div>
+      <?php 
+      
+        $dashboard = new Dashboard();
+        $dashboard->Display();
+      ?>
+      <!-- <div id="calendar"></div> -->
     </div>
   </div>
 
