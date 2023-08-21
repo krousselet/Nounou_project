@@ -1,18 +1,19 @@
 .btn-primary,
 .bg-primary {
-  background-color: #CD6130 !important;
-  border-color: #CD6130 !important;
+  background-color: #cd6130 !important;
+  border-color: #cd6130 !important;
 }
 
 /* Pour surcharger la couleur secondaire */
-.btn-secondary, .bg-secondary {
-    background-color: #0d98b5 !important;
-    border-color: #0d98b5 !important;
+.btn-secondary,
+.bg-secondary {
+  background-color: #0d98b5 !important;
+  border-color: #0d98b5 !important;
 }
 
 :root {
-    --bs-primary: #CD6130;
-    --bs-secondary: #0d98b5;
+  --bs-primary: #cd6130;
+  --bs-secondary: #0d98b5;
 }
 
 *,
@@ -104,5 +105,4 @@ input {
   background: var(--secondary-color);
   box-shadow: 0 20px 7px rgb(255, 255, 255);
   height: 10%;
-
 }

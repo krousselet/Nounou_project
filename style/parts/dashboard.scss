@@ -1,50 +1,49 @@
 .comment.comment {
-    padding: 0;
-    // Couleurs principales = bleu / jaune / orange cf BORDERLANDS --> MALIWAN
+  padding: 0;
+  // Couleurs principales = bleu / jaune / orange cf BORDERLANDS --> MALIWAN
 
-    // #CD6130 = orange / #132531 = bleu
+  // #CD6130 = orange / #132531 = bleu
 }
 
 .happy-body-container {
-    position: relative;
-    width: 98vw;
-    height: 800px;
+  position: relative;
+  width: 98vw;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0 auto;
+
+  .happy-body {
+    width: inherit;
+    height: inherit;
+  }
+
+  .blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 0 auto;
 
-    .happy-body {
-        width: inherit;
-        height: inherit;
+    #calendar {
+      display: flex;
+      background-color: rgba(7, 7, 7, 0.329);
+      border-radius: 7px;
+      width: 95%;
+      height: 75%;
+      margin: 0 auto;
+      transition: all 0.5s ease;
     }
 
-    .blur {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-        #calendar {
-            display: flex;
-            background-color: rgba(7, 7, 7, 0.329);
-            border-radius: 7px;
-            width: 95%;
-            height: 75%;
-            margin: 0 auto;
-            transition: all .5s ease;
-        }
-
-        #calendar:hover {
-            background-color: rgba(7, 7, 7, 0.589);
-            transition: all .5s ease;
-        }
+    #calendar:hover {
+      background-color: rgba(7, 7, 7, 0.589);
+      transition: all 0.5s ease;
     }
+  }
 }
