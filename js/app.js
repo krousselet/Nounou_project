@@ -18,7 +18,7 @@ let app = {
                 });
                 document.querySelector('nav .btn_regis').addEventListener('click', (e)=>{
                     e.preventDefault();
-                    app.base.updatepage('Login');
+                    app.base.updatepage('Register');
                 });
             }
             if(logout){
