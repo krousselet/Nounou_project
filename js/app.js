@@ -3,7 +3,7 @@
 //panda.ajax(url, data , callback)
 //panda.ajax("./endpoint.php", {id:1}, (e) => {console.log("Reponse",e)})
 
-import { panda } from 'https://pandatown.fr/lib/pandalib.php';
+import { panda } from 'https://pandatown.fr/lib/pandalib.js';
 
 let app = {
     nav : {
