@@ -49,6 +49,11 @@
   }
 
   .blur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 800px;
 
 
     #calendar {
