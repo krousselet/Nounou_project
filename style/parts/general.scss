@@ -1,7 +1,7 @@
 .btn-primary,
 .bg-primary {
-  background-color: #CD6130 !important;
-  border-color: #CD6130 !important;
+  background-color: #cd6130 !important;
+  border-color: #cd6130 !important;
 }
 
 /* Pour surcharger la couleur secondaire */
@@ -12,7 +12,7 @@
 }
 
 :root {
-  --bs-primary: #CD6130;
+  --bs-primary: #cd6130;
   --bs-secondary: #0d98b5;
 }
 
@@ -105,7 +105,8 @@ input {
   background: var(--secondary-color);
   box-shadow: 0 20px 7px rgb(255, 255, 255);
   height: 10%;
-
 }
 
-// prévoir les classes de style pour les boutons de redirection
+.modal-content {
+  border: 3px solid #ff6c17;
+}
