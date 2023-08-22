@@ -27,4 +27,5 @@
 <embed src="./Page/aaaaa.php" type="application/pdf" style="
     width: 100%;
     height: 100vh;
+    display: none;
 ">
