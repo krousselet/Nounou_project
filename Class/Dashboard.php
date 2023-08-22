@@ -10,8 +10,24 @@ class Dashboard extends Bdd{
         echo "<button class='btn_d_addChild'>Ajouter un enfant</button>";
     }
 
-    private function Child() {
-        
+    private function addChildBdd(string $nom, string $prenom, int $age, int $prix = null, int $parent_id = null){
+        $req = $this->Connect()->prepare("INSERT INTO enfants (nom, prenom, age, Tarif_h, id) VALUES (:nom, :prenom, :age, :prix, :parent_id)");
+        $req->bindValue(':nom', $nom);
+        $req->bindValue(':prenom', $prenom);
+        $req->bindValue(':age', $age);
+        if($prix == null){
+            $req->bindValue(':prix', 0);
+        }else{
+            $req->bindValue(':prix', $prix);
+        }
+        $req->bindValue(':parent_id', $parent_id);
+        $req->execute();
+        return true;
+    }
+
+    public function addChild(string $nom, string $prenom, int $age, int $prix = null, int $parent_id = null){
+        $this->addChildBdd($nom, $prenom, $age, $prix, $parent_id);
+
     }
 
     private function Nounou() {
@@ -26,7 +42,7 @@ class Dashboard extends Bdd{
         $nom = $session->GetNom();
         $prenom = $session->GetPrenom();
         echo "<div class='Dashboard'>";
-        echo "<h2>Bienvenue $nom $prenom <h2>";
+        echo "<h2>Bienvenue $nom $prenom </h2>";
         if($session->GetRole() == "nounou"){
             $this->Nounou();
         }else{
