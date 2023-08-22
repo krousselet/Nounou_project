@@ -1,20 +1,16 @@
-import { panda } from 'https://pandatown.fr/lib/pandalib.js';
+import { panda } from "https://pandatown.fr/lib/pandalib.js";
 
 const page = {
-    init : function (type) {
-        let calendar = document.querySelector('#calendar');
-        calendar.style.display = 'none';
+    init : function () {
         document.querySelector('.btn_d_addChild').addEventListener('click', () => {
             let form = panda.util.newelem('form',{className:"form_d_addChild  d-flex flex-column justify-content-center align-items-center mt-2"});
-            form.appendChild(panda.util.newelem("h1", {textContent: "Ajouter un enfant",className: "fs-5 text-center mt-2 mb-2"}));
+            form.appendChild(panda.util.newelem("h1", {textContent: "Ajouter un enfant",className: "fs-5 text-center mt-2 mb-2"})
+            );
             form.appendChild(panda.util.newelem('input',{"type":"text","name":"Child_name","placeholder":"Nom de l'enfant","className": "fs-5 register-input mt-2"}));
             form.appendChild(panda.util.newelem('input',{"type":"text","name":"Child_prenom","placeholder":"Prenom de l'enfant","className": "fs-5 register-input mt-2"}));
             form.appendChild(panda.util.newelem('input',{"type":"number","name":"Child_age","placeholder":"Age de l'enfant","className": "fs-5 register-input mt-2"}));
-            if(type == "nounou"){
-              form.appendChild(panda.util.newelem('input',{"type":"number","name":"Child_prix","placeholder":"Tarif horaire","className": "fs-5 register-input mt-2"}));
-              let selector = panda.util.newelem('option',{});
-            }
-            let sendbtn = panda.util.newelem('input',{"type":"submit","name":"Add_Child","className":"btn_d_addChildS","className":"btn_d_addChildS btn btn-custom-color m-3 fs-5"});
+            form.appendChild(panda.util.newelem('input',{"type":"number","name":"Child_prix","placeholder":"Tarif horaire","className": "fs-5 register-input mt-2"}));
+            let sendbtn = panda.util.newelem('input',{"type":"submit","name":"Add_Child","className":"btn_d_addChildS btn btn-custom-color m-3 fs-5"});
             
             form.appendChild(sendbtn);
             document.querySelector('.blur').innerHTML = form.outerHTML;
@@ -24,7 +20,7 @@ const page = {
               let forme = document.querySelector('.form_d_addChild');
               const nom = forme.querySelector("input[name=Child_name]").value;
               const prenom = forme.querySelector("input[name=Child_prenom]").value;
-              const age = forme.querySelector("input[name=Child_age]").value;
+              const age = forme.querySelector ("input[name=Child_age]").value;
               
               const prix = 0;
               if(type == "nounou"){

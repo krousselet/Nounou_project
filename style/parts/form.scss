@@ -46,3 +46,10 @@
   border-color: #ff6c17;
   outline: none;
 }
+
+.form-ajout-enfant {
+  width: 400px;
+  @media (max-width: 450px) {
+    width: 300px;
+  }
+}

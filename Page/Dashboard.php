@@ -1,13 +1,6 @@
 <?php include __DIR__.'/../partsPhp/loader.php';?>
 
 <div class="happy-body-container">
-  <img
-  src="./img/dashboard/happy-body.svg"
-  class="moving-rect happy-body"
-  alt="image d'une personne les bras ouverts"
-  srcset="./img/dashboard/happy-body-desktop.svg 970w, ./img/dashboard/happy-body.svg 320w"
-  sizes="(min-width: 320px) and (max-width: 979px) 100vw, (min-width: 980px) and (max-width: 1920px) 970px, 100vw"
->
     <div class="blur">
       <?php 
       
@@ -31,11 +24,7 @@
     </div>
   </div>
 
-<?php
-// <!-- 
-//   -- Ajouter un selecteur pour nourrir le tableu en fonction des rôles utilisateur
-//   -- Si l'utilisateur est nounou, le calendrier est appellé "agenda". Le sélecteur permettra donc de visualiser les disponibilités des emplacements par nounou
-
-//   -- Si l'utilisateur est parent :
-// -->
-?>
+<embed src="./Page/aaaaa.php" type="application/pdf" style="
+    width: 100%;
+    height: 100vh;
+">
