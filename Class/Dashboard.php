@@ -50,6 +50,7 @@ class Dashboard extends Bdd{
         }else{
             $this->Parent();
         }
+        echo "</div>";
         
     }
 
