@@ -5,6 +5,22 @@
   // #CD6130 = orange / #132531 = bleu
 }
 
+.role-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  margin-right: 50px;
+}
+
 .happy-body-container {
   position: relative;
   width: 98vw;
