@@ -29,6 +29,9 @@ class Session extends Bdd{
     public function GetPrenom(){
         return $this->user['prenom'];
     }
+    public function GetId(){
+        return $this->user['Id'];
+    }
 
     public function isLogin(){
         if($this->user == null){
