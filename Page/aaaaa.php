@@ -32,7 +32,7 @@ $pdf->SetTextColor(0, 0, 0); // Set text color to black
 
 // Define table columns and column widths
 $columnWidths = array(40, 40, 40, 40); // Adjust the widths as needed
-$columnHeaders = array("Montant total", "Date de facturation", "Date d'edition", "Nom", "Prenom");
+$columnHeaders = array("Montant total", "Date de facturation", "Date d'edition", "Nom assistante", "Nom famille");
 
 // Create a table header row
 $pdf->SetFillColor(13, 152, 181); // Header background color
@@ -43,7 +43,6 @@ foreach ($columnHeaders as $header) {
 }
 $pdf->Ln(); // Move to the next row
 
-// Loop through the database results and add them to the table
 $pdf->SetFillColor(255, 255, 255); // Cell background color for data rows (white)
 $pdf->SetTextColor(0, 0, 0); // Text color for data rows (black)
 $pdf->SetFont('Arial', '', 12);
