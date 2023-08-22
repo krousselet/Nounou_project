@@ -1,7 +1,6 @@
 <?php include __DIR__.'/../partsPhp/loader.php';?>
 
 <div class="happy-body-container">
-  
     <div class="blur">
       <?php 
       

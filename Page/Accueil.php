@@ -7,7 +7,7 @@
 
 
 <div class="card form-log-reg  " style="width: 22rem;">
-  <img src="./img/family-1866868_1920.jpg" class="card-img-top" alt="...">
+  <img src="./img/parent-kids.png" class="card-img-top" alt="...">
   <div class="card-body d-flex flex-column justify-content-center align-items-center">
     <h5 class="card-title mb-4">Vous possédez déjà un compte ?</h5>
     <a href="#" class="btn btn-custom-color ">Se connecter</a>
@@ -15,7 +15,7 @@
 </div>
 
 <div class="card form-log-reg   justify-content-center align-items-center" style="width: 22rem;">
-  <img src="./img/family-1866868_1920.jpg" class="card-img-top" alt="...">
+  <img src="./img/parent.png" class="card-img-top" alt="...">
   <div class="card-body d-flex flex-column justify-content-center align-items-center">
     <h5 class="card-title mb-4">Pas encore de compte ?</h5>
     <a href="#" class="btn btn-custom-color ">Créer un compte</a>
