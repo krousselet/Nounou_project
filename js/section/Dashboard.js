@@ -5,12 +5,12 @@ const page = {
     document.querySelector(".btn_d_addChild").addEventListener("click", () => {
       let form = panda.util.newelem("form", {
         className:
-          "form_d_addChild d-flex flex-column justify-content-center align-items-center mt-2",
+          "form_d_addChild d-flex flex-column justify-content-center align-items-center mt-2 card form-log-reg form-ajout-enfant",
       });
       form.appendChild(
         panda.util.newelem("h1", {
           textContent: "Ajouter un enfant",
-          className: "fs-5 text-center mt-2 mb-2",
+          className: "fs-5 text-center mt-2 mb-2 card-title",
         })
       );
       form.appendChild(
