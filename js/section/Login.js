@@ -12,7 +12,8 @@ const page = {
             window.location.href = "./index.php";
         });
     },
-    Login : function() {
+    Login : function(ee) {
+        ee.preventDefault();
         let email = document.querySelector("#form-login #mail-connect").value;
         let password = document.querySelector("#form-login #mdp-connect").value;
         if (email == "" || password == "") {
@@ -22,8 +23,8 @@ const page = {
         panda.ajax('./ajax/ajax.php', { action: "login", email: email, password: password }, (e) => {
             console.log(e);
             if(e == "true") {
-                // window.location.href = "./index.php";
-                app.base.updatepage("Accueil");
+                window.location.href = "./index.php";
+                //app.base.updatepage("Accueil");
                 return;
             }else{
                 // zone message error
