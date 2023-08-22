@@ -52,7 +52,13 @@ let app = {
                 panda.ajax("./Page/"+page+".php", newpage.data, (e) => {
                     htmlpage.innerHTML = e;
                 });
-                setTimeout(()=>{this.page.init()},500);
+                setTimeout(()=>{
+                    if(typeof type !== 'undefined'){
+                        this.page.init(type)
+                    }else{
+                        this.page.init()
+                    }
+                },500);
             });
         }
     },

@@ -18,7 +18,11 @@ $session = new Session(); ?>
 
 </head>
 <body>
-
+<script>
+    <?php if($session->isLogin()){
+        echo "type = '".$session->GetRole()."'";
+    }?>
+</script>
 <nav class="navbar navbar-expand-lg bg-primary text-light">
     <div class="container-fluid">
         <!-- Logo à gauche -->
