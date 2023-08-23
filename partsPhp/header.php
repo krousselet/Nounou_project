@@ -15,7 +15,9 @@ $session = new Session(); ?>
     <link rel="stylesheet" href="./style/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <script>
