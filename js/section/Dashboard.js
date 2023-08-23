@@ -59,11 +59,12 @@ const page = {
         //Représentation sur un mois//
         // plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
         initialView: 'timeGridWeek',
-        
+        themeSystem: 'bootstrap5',
+        timezone: 'local',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,listWeek'
+          right: 'dayGridMonth,timeGridWeek,dayGridWeek,listWeek'
         },
         locale: 'fr',
         events: [],

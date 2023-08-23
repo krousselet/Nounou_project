@@ -40,18 +40,13 @@
     height: inherit;
   }
 
-  .btn {
-    width: 250px;
-  }
-  .btn:hover {
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.678);
-  }
   .blur {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 95vw;
     height: 800px;
+
     #calendar {
       display: flex;
       background-color: rgb(255, 255, 255);
