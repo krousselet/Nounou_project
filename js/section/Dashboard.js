@@ -50,35 +50,45 @@ const page = {
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
       //Représentation sur un mois//
-      initialView: 'dayGridMonth',
+      initialView: "dayGridMonth",
       events: [
         //objets pour peupler les cellules//
-        {}
+        {},
       ],
       dateClick: function (info) {
         // Affichez le formulaire lorsque l'utilisateur clique sur une date
-        modal.style.display = 'block';
-        calendarEl.style.display = 'none';
+        modal.style.display = "flex";
+        calendarEl.style.display = "none";
         // Remplissez le champ caché avec la date sur laquelle l'utilisateur a cliqué
-        var eventDateInput = document.getElementById('eventDate');
+        var eventDateInput = document.getElementById("eventDate");
         eventDateInput.value = info.dateStr;
-      }
+      },
     });
     calendar.render();
-    document.getElementById('addEventForm').addEventListener('submit', (e) => {
+    document.getElementById("addEventForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const form = e.target;
-      form.querySelector('input[type=submit]').disabled = true;
-      const start = form.querySelector('input[name=eventDateStart]').value;
-      const end = form.querySelector('input[name=eventDateEnd]').value;
-      const date = form.querySelector('input[name=eventDate]').value;
-      const repeat = form.querySelector('input[name=eventRepeat]').value;
-      panda.ajax('./ajax/dashboard.php', { "action": "addPlaning", "eventDateStart": start, "eventDateEnd": end, "eventRepeat": repeat, "eventDate": date }, (data) => {
-        modal.style.display = 'none';
-        calendarEl.style.display = '';
-      });
+      form.querySelector("input[type=submit]").disabled = true;
+      const start = form.querySelector("input[name=eventDateStart]").value;
+      const end = form.querySelector("input[name=eventDateEnd]").value;
+      const date = form.querySelector("input[name=eventDate]").value;
+      const repeat = form.querySelector("input[name=eventRepeat]").value;
+      panda.ajax(
+        "./ajax/dashboard.php",
+        {
+          action: "addPlaning",
+          eventDateStart: start,
+          eventDateEnd: end,
+          eventRepeat: repeat,
+          eventDate: date,
+        },
+        (data) => {
+          modal.style.display = "none";
+          calendarEl.style.display = "";
+        }
+      );
     });
-  }
-}
+  },
+};
 
 export { page };

@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-center align-items-center">
 
-  <div class=" form-log-reg card searchBars d-flex flex-column col-4 m-5">
+  <div class=" form-log-reg card searchBars d-flex flex-column col-10 col-sm-8 col-md-6 col-lg-4 m-5">
     <h1 class="text-center">Connection</h1>
 
     <form method="POST" class="d-flex flex-column " id="form-login">
