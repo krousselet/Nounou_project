@@ -13,25 +13,17 @@
   height: 300px;
 }
 
-.btn {
-  width: 250px;
-}
-
-.btn:hover {
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.678);
-  ;
-}
-
 .Dashboard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
   justify-content: center;
   align-items: center;
   letter-spacing: 3px;
-  background-color: rgba(255, 255, 255, 0.363);
   border-radius: 7px;
   margin-bottom: 50px;
   text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.291);
 }
 
 .happy-body-container {
@@ -48,14 +40,18 @@
     height: inherit;
   }
 
+  .btn {
+    width: 250px;
+  }
+  .btn:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.678);
+  }
   .blur {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 95vw;
     height: 800px;
-
-
     #calendar {
       display: flex;
       background-color: rgb(255, 255, 255);
@@ -67,7 +63,5 @@
       outline: var(--bs-primary) solid 2px;
       padding: 5px;
     }
-
-
   }
 }
