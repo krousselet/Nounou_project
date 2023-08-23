@@ -15,23 +15,24 @@
 
 .btn {
   width: 250px;
+  background-color: red;
+  color: white;
 }
 
 .btn:hover {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.678);
-  ;
 }
 
 .Dashboard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   letter-spacing: 3px;
-  background-color: rgba(255, 255, 255, 0.363);
   border-radius: 7px;
   margin-bottom: 50px;
   text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
 }
 
 .happy-body-container {
@@ -68,6 +69,14 @@
       padding: 5px;
     }
 
+    /*  Faire la page Profil qui sera bindée par Jordan, avec comme informations :
+
+      _ Nom utilisateur
+      _ Prénom utilisateur
+      _ Réinitialisation mdp
+      _ Username
+
+    */
 
   }
 }

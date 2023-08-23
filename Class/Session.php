@@ -32,6 +32,15 @@ class Session extends Bdd{
     public function GetId(){
         return $this->user['Id'];
     }
+    public function GetTel(){
+        return $this->user['tel'];
+    }
+    public function GetInscription(){
+        return $this->user['date_inscription'];
+    }
+    public function GetNaissance(){
+        return $this->user['date_naissance'];
+    }
 
     public function isLogin(){
         if($this->user == null){

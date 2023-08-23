@@ -15,11 +15,6 @@
 
     public function CreateUser($email, $password, $nom, $prenom, $tel, $dateDeNaissance, $role)
     {
-        // Insertion d'un nouvel utilisateur dans la base de données
-        //!!! Quel objet instancier, et comment ?
-        // $database = new Bdd($this->db);
-        // return $database->insertUser($email, $hashedPassword);
-        //Obliger le remplissage champs SAUF etat et reset_password
 
        
         if (empty($email) || empty($password) || empty($nom) || empty($prenom) || empty($tel) || empty($dateDeNaissance) || empty($role)) {
@@ -90,7 +85,6 @@
         // var_dump($user);
         // Vérifier la correspondance entre le mot de passe et son hashage
         if ($user && password_verify("Panda".$password."Town", $user['mot_de_passe'])) {
-            //Attribution du nom d'utilisateur comme valeur de session
             
             return $user;
         }
