@@ -16,7 +16,10 @@
               <input type="time" name="eventDateEnd">
               <label for="eventRepeat">Répéter</label>
               <input type="checkbox" name="eventRepeat" id="eventRepeat">
+              <label for="eventDate">Jour Commencement</label>
               <input type="date" id="eventDate" name="eventDate">
+              <label for="eventEndDate">Fin répetition</label>
+              <input type="date" id="eventEndDate" name="eventEndDate" value="">
               <input type="submit" value="Ajouter">
           </form>
       </div>

@@ -21,7 +21,8 @@ spl_autoload_register(function ($class_name) {
 <a href="#" >Mentions légales</a>
 </div>
 <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.js"></script>
-
+<!-- <script src='https://fullcalendar.io/releases/fullcalendar/5.5.1/locales/fr.js'></script> -->
+<!-- <script src="./dist/bundle.js"></script> -->
 <script type="module" src="./js/app.js"></script>
 
 </body>

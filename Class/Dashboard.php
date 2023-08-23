@@ -53,5 +53,32 @@ class Dashboard extends Bdd{
         echo "</div>";
         
     }
-
+    public function AddCalendar($start, $end, $date_in, $repeat, $date_out = null){
+        $req = $this->Connect()->prepare("INSERT INTO disponibilités (heure_debut, heure_fin, jour_start, jour_end, repeater, Id) VALUES (:start, :end, :date_in, :date_out, :repeat, :parent_id)");
+        $req->bindValue(':start', $start);
+        $req->bindValue(':end', $end);
+        $req->bindValue(':date_in', $date_in);
+        $req->bindValue(':date_in', $date_in);
+        $req->bindValue(':date_in', $date_in);
+        $req->bindValue(':date_out', $date_out);
+        if($repeat == "on"){
+            $repeat = true;
+        }else{
+            $repeat = false;
+        }
+        $req->bindValue(':repeat', $repeat);
+        $session = new Session();
+        $parent_id = $session->GetId();
+        $req->bindValue(':parent_id', $parent_id);
+        $req->execute();
+        return true;
+    }
+    public function getCalendar(){
+        $req = $this->Connect()->prepare("SELECT * FROM disponibilités WHERE Id = :parent_id");
+        $session = new Session();
+        $parent_id = $session->GetId();
+        $req->bindValue(':parent_id', $parent_id);
+        $req->execute();
+        return $req->fetchAll();
+    }
 }

@@ -1,4 +1,9 @@
 import { panda } from "https://pandatown.fr/lib/pandalib.js";
+// import { Calendar } from '/node_modules/@fullcalendar/core/index.js';
+// import dayGridPlugin from '/node_modules/@fullcalendar/daygrid/index.js';
+// import timeGridPlugin from '/node_modules/@fullcalendar/timegrid/index.js';
+// import listPlugin from '/node_modules/@fullcalendar/list/index.js';
+
 
 const page = {
     init : function () {
@@ -47,37 +52,96 @@ const page = {
     loadcalendat: function(){
       const calendarEl = document.getElementById('calendar');
       const modal = document.getElementById('eventModal');
+      // let disponibiliter = {};
+      
+      // console.log(list);
+      let calendar = new FullCalendar.Calendar(calendarEl, {
+        //Représentation sur un mois//
+        // plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
+        initialView: 'timeGridWeek',
+        
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,listWeek'
+        },
+        locale: 'fr',
+        events: [],
+        dateClick: function(info) {
+            // Affichez le formulaire lorsque l'utilisateur clique sur une date
+            modal.style.display = 'block';
+            calendarEl.style.display = 'none';
+            // Remplissez le champ caché avec la date sur laquelle l'utilisateur a cliqué
+            var eventDateInput = document.getElementById('eventDate');
+            eventDateInput.value = info.dateStr;
+        }  
+      });
 
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          //Représentation sur un mois//
-          initialView: 'dayGridMonth',
-          events: [
-              //objets pour peupler les cellules//
-              {}
-            ],
-            dateClick: function(info) {
-                // Affichez le formulaire lorsque l'utilisateur clique sur une date
-                modal.style.display = 'block';
-                calendarEl.style.display = 'none';
-                // Remplissez le champ caché avec la date sur laquelle l'utilisateur a cliqué
-                var eventDateInput = document.getElementById('eventDate');
-                eventDateInput.value = info.dateStr;
-            }  
-        });
-        calendar.render();
-        document.getElementById('addEventForm').addEventListener('submit', (e) => {
-          e.preventDefault();
-          const form = e.target;
-          form.querySelector('input[type=submit]').disabled = true;
-          const start = form.querySelector('input[name=eventDateStart]').value;
-          const end = form.querySelector('input[name=eventDateEnd]').value;
-          const date = form.querySelector('input[name=eventDate]').value;
-          const repeat = form.querySelector('input[name=eventRepeat]').value;
-          panda.ajax('./ajax/dashboard.php', {"action":"addPlaning","eventDateStart":start,"eventDateEnd":end,"eventRepeat":repeat,"eventDate":date}, (data) => {
-            modal.style.display = 'none';
-            calendarEl.style.display = '';
+      // calendar.render();
+      panda.ajax('./ajax/dashboard.php',{ action: 'getPlaning'}, (data) => {
+        let planing = JSON.parse(data);
+        let lists = [];
+        if(planing[0].length > 0){
+          planing[0].forEach(element => {
+            let t_end = null;
+            let list = {title: 'Disponibilité - '+planing[1]};
+            let name = panda.ajax(element, )
+            list.startRecur = element['jour_start'];
+            
+            list.startTime = element['heure_debut'];
+            list.endTime = element['heure_fin'];
+            if(element['repeater'] == 1){
+              let day = new Date(element['jour_start']).getDay();
+                // if(day == 0){
+                //   day = 7;
+                // }
+              list.daysOfWeek = [day];
+              if(element['Jour_end'] != null){
+                list.endRecur = element['Jour_end'];
+              }
+            }
+            panda.util.log(JSON.stringify(list), "gold");
+            calendar.addEvent(list);
+            // daysOfWeek: [1],  // 1 représente le lundi
+            // startTime: '10:00',  // Heure de début
+            // endTime: '12:00',  // Heure de fin
+            // // Vous pouvez également ajouter d'autres propriétés comme la date de début et de fin
+            // startRecur: element['jour_start'],
+            // endRecur: end};
+            
           });
-        });     
+          // console.log(lists);
+          // var newEvent = {
+          //   title: 'Mon événement',
+          //   daysOfWeek: [1],  // 0 = Dimanche, 1 = Lundi, etc.
+          //   startTime: '10:00',  // Exemple de temps de début
+          //   endTime: '12:00',    // Exemple de temps de fin
+          //   startRecur: '2023-08-23',
+          //   endRecur: '2023-10-23'
+          // };
+          // calendar.addEvent(newEvent);
+          // console.log(calendar);
+          calendar.render();
+          // calendar.refetchEvents();
+
+          return;
+        }else{
+          return;
+        }
+      });
+      document.getElementById('addEventForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = e.target;
+        form.querySelector('input[type=submit]').disabled = true;
+        const start = form.querySelector('input[name=eventDateStart]').value;
+        const end = form.querySelector('input[name=eventDateEnd]').value;
+        const date = form.querySelector('input[name=eventDate]').value;
+        const repeat = form.querySelector('input[name=eventRepeat]').value;
+        panda.ajax('./ajax/dashboard.php', {"action":"addPlaning","eventDateStart":start,"eventDateEnd":end,"eventRepeat":repeat,"eventDate":date}, (data) => {
+          modal.style.display = 'none';
+          calendarEl.style.display = '';
+        });
+      });     
     }
 }
 
