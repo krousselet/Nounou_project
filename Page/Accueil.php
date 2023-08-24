@@ -7,7 +7,7 @@
   <img src="./img/parent-kids.png" class="card-img-top" alt="...">
   <div class="card-body d-flex flex-column justify-content-center align-items-center">
     <h5 class="card-title mb-4">Vous possédez déjà un compte ?</h5>
-    <a href="#" class="btn btn-custom-color ">Se connecter</a>
+    <a href="#" class="btn btn-custom-color btn-accueil-connect">Se connecter</a>
   </div>
 </div>
 
@@ -15,7 +15,7 @@
   <img src="./img/parent.png" class="card-img-top" alt="...">
   <div class="card-body d-flex flex-column justify-content-center align-items-center">
     <h5 class="card-title mb-4">Pas encore de compte ?</h5>
-    <a href="#" class="btn btn-custom-color ">Créer un compte</a>
+    <a href="#" class="btn btn-custom-color btn-accueil-register">Créer un compte</a>
   </div>
 </div>
 
