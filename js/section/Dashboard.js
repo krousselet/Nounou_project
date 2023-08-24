@@ -207,5 +207,26 @@ const page = {
     });
   },
 };
+          return;
+        }else{
+          calendar.render();
+          return;
+        }
+      });
+      document.getElementById('addEventForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = e.target;
+        form.querySelector('input[type=submit]').disabled = true;
+        const start = form.querySelector('input[name=eventDateStart]').value;
+        const end = form.querySelector('input[name=eventDateEnd]').value;
+        const date = form.querySelector('input[name=eventDate]').value;
+        const repeat = form.querySelector('input[name=eventRepeat]').value;
+        panda.ajax('./ajax/dashboard.php', {"action":"addPlaning","eventDateStart":start,"eventDateEnd":end,"eventRepeat":repeat,"eventDate":date}, (data) => {
+          modal.style.display = 'none';
+          calendarEl.style.display = '';
+        });
+      });     
+    }
+}
 
 export { page };
