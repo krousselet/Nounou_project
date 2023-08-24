@@ -37,6 +37,36 @@ body {
   overflow-x: hidden;
 }
 
+a.nav-link {
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    top: 80%;
+    transition: .5s ease;
+  }
+
+  &:hover::before {
+    width: 100%;
+    transition: .5s ease;
+  }
+}
+
+// a.dropdown {
+//   &::after {
+//     height: 1px;
+//   }
+// }
+
+
+
+
 input {
   width: 100%;
   padding: 10px;

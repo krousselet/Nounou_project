@@ -2,8 +2,9 @@
     width: 25vw;
     height: 50vh;
     margin: 10vh auto;
-    background-color: rgba(255, 255, 255, 0.486);
+    background-color: rgb(255, 255, 255);
     backdrop-filter: 15px;
+    outline: 2px solid var(--bs-primary);
 
     .user-data p {
         display: flex;
