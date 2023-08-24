@@ -60,11 +60,11 @@ let app = {
                     htmlpage.innerHTML = e;
                 });
                 setTimeout(() => {
-                    if (typeof type !== 'undefined') {
-                        this.page.init(type)
-                    } else {
-                        this.page.init()
-                    }
+                    // if (typeof type !== 'undefined') {
+                    //     this.page.init(type)
+                    // } else {
+                        this.page.init(app)
+                    // }
                 }, 500);
             });
         }

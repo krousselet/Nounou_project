@@ -4,10 +4,10 @@ const page = {
     app: null,
     init : function (app) {
         this.app = app;
-        document.querySelector('').addEventListener('click', () => {
+        document.querySelector('.btn-accueil-connect').addEventListener('click', () => {
             this.app.base.updatepage("Login");
         });
-        document.querySelector('').addEventListener('click', () => {
+        document.querySelector('.btn-accueil-register').addEventListener('click', () => {
             this.app.base.updatepage("Register");
         });
     }

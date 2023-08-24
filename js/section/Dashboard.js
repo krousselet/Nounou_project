@@ -9,6 +9,7 @@ const page = {
   app: null,
   init : function (app) {
       this.app = app;
+      const dash = document.querySelector('.role-container');
         document.querySelector('.btn_d_addChild').addEventListener('click', () => {
             let form = panda.util.newelem('form',{className:"form_d_addChild  d-flex flex-column justify-content-center align-items-center mt-2"});
             form.appendChild(panda.util.newelem("h1", {textContent: "Ajouter un enfant",className: "fs-5 text-center mt-2 mb-2"})
@@ -20,7 +21,7 @@ const page = {
             let sendbtn = panda.util.newelem('input',{"type":"submit","name":"Add_Child","className":"btn_d_addChildS btn btn-custom-color m-3 fs-5"});
             
             form.appendChild(sendbtn);
-            document.querySelector('.blur').innerHTML = form.outerHTML;
+            dash.innerHTML = form.outerHTML;
             document.querySelector('.form_d_addChild > .btn_d_addChildS').addEventListener('click', (e) => {
               // console.log(e);
               e.preventDefault();
