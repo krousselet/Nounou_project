@@ -122,13 +122,14 @@ const page = {
           // };
           // calendar.addEvent(newEvent);
           // console.log(calendar);
-          calendar.render();
+          // calendar.render();
           // calendar.refetchEvents();
 
           return;
         }else{
           return;
         }
+        calendar.render();
       });
       document.getElementById('addEventForm').addEventListener('submit', (e) => {
         e.preventDefault();
