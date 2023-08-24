@@ -13,9 +13,9 @@ spl_autoload_register(function ($class_name) {
 ?>
 
 <div class="footer text-center">Crée par 
-  <a href="#">J.François</a>, 
-    <a href="#">J.Lambert</a>
-  <a href="#">K.Rousselet</a>
+  <a href="https://github.com/PandaMan16">J.François</a>, 
+    <a href="https://github.com/lambert-j">J.Lambert</a>
+  <a href="https://github.com/krousselet">K.Rousselet</a>
 </div>
 <div class="text-center">
 <a href="#" >Mentions légales</a>
