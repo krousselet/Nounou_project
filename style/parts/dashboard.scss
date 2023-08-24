@@ -11,12 +11,16 @@
   justify-content: space-around;
   align-items: center;
   height: 300px;
+
+  button {
+    width: 200px;
+  }
 }
 
 .Dashboard {
   display: flex;
   flex-direction: column;
-
+  background-color: white;
   justify-content: center;
   align-items: center;
   letter-spacing: 3px;
@@ -24,7 +28,22 @@
   margin-bottom: 50px;
   text-align: center;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.291);
+  outline: 2px solid var(--bs-primary);
+  padding: 20px;
+
+
+
+  h2::after {
+    content: '';
+    display: block;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    height: 2px;
+    background-color: var(--bs-primary);
+  }
 }
+
 
 .happy-body-container {
   position: relative;
