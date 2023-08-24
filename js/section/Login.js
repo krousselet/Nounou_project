@@ -2,7 +2,9 @@
 import { panda } from 'https://pandatown.fr/lib/pandalib.js';
 
 const page = {
-    init: function () {
+    app: null,
+    init : function (app) {
+        this.app = app;
         document.querySelector('#Login').addEventListener('click', this.Login);
         // document.querySelector('#Logout').addEventListener('click', this.Logout);
         panda.util.log('page loaded');

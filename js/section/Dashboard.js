@@ -6,7 +6,9 @@ import { panda } from "https://pandatown.fr/lib/pandalib.js";
 
 
 const page = {
-    init : function () {
+  app: null,
+  init : function (app) {
+      this.app = app;
         document.querySelector('.btn_d_addChild').addEventListener('click', () => {
             let form = panda.util.newelem('form',{className:"form_d_addChild  d-flex flex-column justify-content-center align-items-center mt-2"});
             form.appendChild(panda.util.newelem("h1", {textContent: "Ajouter un enfant",className: "fs-5 text-center mt-2 mb-2"})
@@ -48,6 +50,9 @@ const page = {
           calendar.style.display = '';
           this.loadcalendat();
         });
+        document.querySelector('.btn_d_ListChild').addEventListener('click', () => {
+          
+        })
     },
     loadcalendat: function(){
       const calendarEl = document.getElementById('calendar');

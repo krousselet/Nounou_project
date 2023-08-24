@@ -8,6 +8,8 @@ class Dashboard extends Bdd{
 
     private function Parent() {
         echo "<button class='btn_d_addChild'>Ajouter un enfant</button>";
+        echo "<button class='btn_d_ListChild'>List des enfant</button>";
+        echo "<button class='btn_d_Nounou'>Planing Nounou</button>";
     }
 
     private function addChildBdd(string $nom, string $prenom, int $age, int $prix = null, int $parent_id = null){
@@ -28,6 +30,24 @@ class Dashboard extends Bdd{
     public function addChild(string $nom, string $prenom, int $age, int $prix = null, int $parent_id = null){
         $this->addChildBdd($nom, $prenom, $age, $prix, $parent_id);
 
+    }
+    private function listChild($id){
+        $req = $this->Connect()->prepare("SELECT * FROM enfants where Id = :id");
+        $req->bindValue(':id', $id);
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function PrintlistChilds(int $id){
+        $list = $this->listChild($id);
+        echo "<table>";
+        foreach ($list as $key => $value) {
+            echo "<tr>";
+                echo "<td>".$value['nom']."</td>";
+                echo "<td>".$value['prenom']."</td>";
+                echo "<td>".$value['age']."</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
     }
 
     private function Nounou() {
