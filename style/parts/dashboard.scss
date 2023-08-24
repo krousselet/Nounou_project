@@ -10,10 +10,20 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 300px;
+  min-height: 300px;
 
   button {
     width: 200px;
+  }
+
+  h1::after {
+    content: '';
+    display: block;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    height: 2px;
+    background-color: var(--bs-primary);
   }
 }
 
