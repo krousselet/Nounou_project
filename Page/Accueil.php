@@ -15,7 +15,7 @@
       dès aujourd'hui et découvrez une nouvelle façon de gérer la garde
       d'enfants !
     </div>
-    <img class="accueil-img col-lg-6 col-12 shadow-pop-tr-left " src="../img/couch-family.jpg" alt="" />
+    <img class="accueil-img col-lg-6 col-12 shadow-pop-tr-left " src="./img/couch-family.jpg" alt="" />
   </div>
 
 
@@ -23,7 +23,7 @@
   <div class="accueil-text-box accueil-parent-box d-flex justify-content-center align-items-center flex-row-reverse flex-wrap  mt-4">
     <div class="accueil-text-main-text col-lg-4 col-12">Pour les parents</div>
 
-    <img class="accueil-img  col-lg-6 col-12 shadow-pop-tl-right" src="../img/nice-house.jpg" alt="" />
+    <img class="accueil-img  col-lg-6 col-12 shadow-pop-tl-right" src="./img/nice-house.jpg" alt="" />
   </div>
 
 <!-- Bloc 3 Box Texte Parent -->
@@ -51,7 +51,7 @@
   <div class="mt-4 d-flex justify-content-center align-items-center accueil-text-box flex-wrap">
     <div class="accueil-text-main-text col-lg-4 col-12">Pour les nounous</div>
 
-    <img class="accueil-img  col-lg-6 col-12 shadow-pop-tr-left" src="../img/kids-tree.jpg" alt="" />
+    <img class="accueil-img  col-lg-6 col-12 shadow-pop-tr-left" src="./img/kids-tree.jpg" alt="" />
   </div>
 
 <!-- Bloc 3 Texte Nounou -->
