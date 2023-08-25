@@ -258,7 +258,7 @@ const page = {
           })
           panda.util.log(JSON.stringify(children),"orange");
           panda.ajax("./ajax/dashboard.php", {"action":"addReservation","Id":event.id,"allweek":document.getElementById('allweek').checked,"children":children},(data) => {
-            console.log(data);
+            page.app.base.updatepage("Dashboard");
           });
           // panda.ajax("./ajax/dashboard.php", {"action":"addReservation","Id":event.id,"allweek":document.getElementById('allweek').checked}, (data) => {
           //   this.app.base.updatepage("Dashboard");

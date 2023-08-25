@@ -110,7 +110,20 @@ class Dashboard extends Bdd{
     }
 
     public function addReservation($id,$week,$children){
-        $nounouid = $this->getIdFromDisponibility($id);
-        $req = $this->Connect()->prepare("INSERT INTO reservations ()");
+        $children = explode(",",$children);
+        if($week == true){
+            $week = 1;
+        }else{
+            $week = 0;
+        }
+        foreach ($children as $child) {
+            $req = $this->Connect()->prepare("INSERT INTO réservations (date_start, repeated, Id_Enfants, Id_Disponibilités) VALUES (NOW(), :repeated, :id_enfants, :id_disponibilites)");
+            $req->bindValue(':id_enfants', $child);
+            $req->bindValue(':id_disponibilites', $id);
+            $req->bindValue(':repeated', $week);
+            $req->execute();
+            
+        }
+        return true;
     }
 }
