@@ -102,4 +102,15 @@ class Dashboard extends Bdd{
     public function printDisponibility(){
         return $this->getDisponibility();
     }
+    private function getIdFromDisponibility($id){
+        $req = $this->Connect()->prepare("SELECT Id FROM disponibilités WHERE Id_Disponibilités = :id");
+        $req->bindValue(':id', $id);
+        $req->execute();
+        return $req->fetch();
+    }
+
+    public function addReservation($id,$week,$children){
+        $nounouid = $this->getIdFromDisponibility($id);
+        $req = $this->Connect()->prepare("INSERT INTO reservations ()");
+    }
 }

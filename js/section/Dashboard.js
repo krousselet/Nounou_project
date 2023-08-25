@@ -194,11 +194,7 @@ const page = {
         nowIndicator: true,
         locale: 'fr',
         events: [],
-        eventClick: (info) => {
-          // panda.util.log(JSON.stringify(info), "dodgerblue");
-          let event = info.event; // content title start end and Id_Disponibilités(id)
-
-        }
+        eventClick: this.ValidReserv
       });
       panda.ajax('./ajax/dashboard.php',{ action: 'getDisponibility'}, (data) => {
         let planing = JSON.parse(data);
@@ -228,6 +224,51 @@ const page = {
           return;
         }
       });
+    },
+    ValidReserv: function(info) {
+      // panda.util.log(JSON.stringify(info), "dodgerblue");
+      let event = info.event; // content title start end and Id_Disponibilités(id)
+      panda.util.log(JSON.stringify(event), "dodgerblue");
+      let blur = document.querySelector('.blur');
+      // form choix des plusieure enfant et si tout les semaines
+      let form = panda.util.newelem('form',{"className":"form-group reserve-form"});
+      panda.ajax("./ajax/dashboard.php", {"action":"getListChild"}, (data) => { 
+        let childs = JSON.parse(data);
+        form.appendChild(panda.util.newelem('h1', {textContent: "Valiation de la réservation",className: "fs-5 text-center mt-2 mb-2"}));
+        form.appendChild(panda.util.newelem('p', {textContent: "Veuillez choisir les enfants de la réservation.",className: "fs-5 text-center mt-2 mb-2"}));
+        form.appendChild(panda.util.newelem('input',{"type":"hidden","name":"Id","value":event.id}));
+        childs.forEach(element => {
+          form.appendChild(panda.util.newelem('input',{"type":"checkbox","id":"child_"+element.Id_Enfants,"name":"child_"+element.Id_Enfants,"style":"display:none"}));
+          form.appendChild(panda.util.newelem('label',{"htmlFor":"child_"+element.Id_Enfants,"textContent":element.nom+" "+element.prenom}));
+        });
+        form.appendChild(panda.util.newelem('br',{}));
+        form.appendChild(panda.util.newelem('input',{"type":"checkbox","id":"allweek","name":"allweek","style":"display:none"}));
+        form.appendChild(panda.util.newelem('label',{"htmlFor":"allweek","textContent":"Toutes les semaines"}));
+        let validbutton = panda.util.newelem('input',{"type":"submit","value":"Valider la réservation","className":"btn btn-primary mt-2 mb-2"});
+        form.appendChild(validbutton);
+        blur.appendChild(form);
+        validbutton.addEventListener('click',(e) => {
+          e.preventDefault();
+          panda.util.log(JSON.stringify(e),"orange");
+          let children = [];
+          childs.forEach(element => {
+            if(document.getElementById('child_'+element.Id_Enfants).checked){
+              children.push(element.Id_Enfants);
+            }
+          })
+          panda.util.log(JSON.stringify(children),"orange");
+          panda.ajax("./ajax/dashboard.php", {"action":"addReservation","Id":event.id,"allweek":document.getElementById('allweek').checked,"children":children},(data) => {
+            console.log(data);
+          });
+          // panda.ajax("./ajax/dashboard.php", {"action":"addReservation","Id":event.id,"allweek":document.getElementById('allweek').checked}, (data) => {
+          //   this.app.base.updatepage("Dashboard");
+          // });
+        })
+        document.getElementById('calendar').style.display = 'none';
+
+      });
+      
+      
     }
 }
 
