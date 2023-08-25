@@ -7,7 +7,7 @@ if(!$session->isLogin()){
 }
 if(isset($_GET['test'])){
     if($_GET['test'] == 'true'){
-        $_POST['action'] = 'getDisponibility';
+        $_POST['action'] = 'Id_Enfants';
     }
 }
 if(isset($_POST['action'])){
@@ -45,7 +45,10 @@ if(isset($_POST['action'])){
             $result = $dashboard->printDisponibility();
             echo json_encode($result);
             break;
-        case 'getCalendar':
+        case 'addReservation':
+            $dashboard->addReservation($_POST['Id'], $_POST['allweek'], $_POST['children']);
+            var_dump($_POST);
+            break;
         default:
             break;
     }
