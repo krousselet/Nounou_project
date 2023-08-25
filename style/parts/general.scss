@@ -4,10 +4,6 @@
   border-color: #cd6130 !important;
 }
 
-.nav-link:focus-visible {
-  box-shadow: none;
-}
-
 /* Pour surcharger la couleur secondaire */
 .btn-secondary,
 .bg-secondary {
@@ -26,7 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Comfortaa";
+  // font-family: "Comfortaa";
 }
 
 body {
@@ -40,7 +36,6 @@ body {
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
-
 
 a.nav-link {
   cursor: pointer;
@@ -117,14 +112,6 @@ input {
 
 .modal-content {
   border: 3px solid #ff6c17;
-}
-
-.card {
-  animation: basics .5s ease forwards;
-}
-
-#bienvenu {
-  cursor: default;
 }
 
 // prévoir les classes de style pour les boutons de redirection

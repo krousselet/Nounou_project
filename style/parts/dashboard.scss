@@ -40,7 +40,6 @@
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.291);
   outline: 2px solid var(--bs-primary);
   padding: 20px;
-  animation: basics .5s ease forwards;
 
 
 
@@ -88,61 +87,5 @@
       outline: var(--bs-primary) solid 2px;
       padding: 5px;
     }
-  }
-}
-
-.btn_d_Charge,
-.btn_d_addChild {
-  animation: move .5s ease-in-out;
-}
-
-.btn_d_calendar,
-.btn_d_Facture {
-  animation: move-reverse .5s ease-in-out;
-}
-
-@keyframes basics {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes move {
-  0% {
-    margin-right: inherit;
-  }
-
-  25% {
-    margin-right: -50px;
-  }
-
-  75% {
-    margin-right: 50px;
-  }
-
-  100% {
-    margin-right: inherit;
-  }
-}
-
-@keyframes move-reverse {
-  0% {
-    margin-right: inherit;
-  }
-
-  25% {
-    margin-right: 50px;
-  }
-
-  75% {
-    margin-right: -50px;
-  }
-
-  100% {
-    margin-right: inherit;
   }
 }
