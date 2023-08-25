@@ -71,5 +71,12 @@ let app = {
     },
     page: null,
 }
-app.base.updatepage('Accueil');
+// app.base.updatepage('Accueil');
+import("./section/Acceuil.js").then((module) => {
+    let newpage = module.page;
+    app.page = newpage;
+    setTimeout(() => {
+        app.page.init(app);
+    }, 500);
+});
 app.nav.init();
