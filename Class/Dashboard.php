@@ -7,7 +7,11 @@ class Dashboard extends Bdd{
     }
 
     private function Parent() {
-        echo "<button class='btn_d_addChild'>Ajouter un enfant</button>";
+        echo "<div class='role-container'>";
+        echo "<button class='btn_d_listChild btn btn-custom-color'>List des enfant</button>";
+        echo "<button class='btn_d_addChild btn btn-custom-color'>Ajouter un enfant</button>";
+        echo "<button class='btn_d_DispoNounou btn btn-custom-color'>Disponibilité des nounous</button>";
+        echo "</div>";
     }
 
     private function addChildBdd(string $nom, string $prenom, int $age, int $prix = null, int $parent_id = null){
@@ -29,6 +33,15 @@ class Dashboard extends Bdd{
         $this->addChildBdd($nom, $prenom, $age, $prix, $parent_id);
 
     }
+    private function listChild($id){
+        $req = $this->Connect()->prepare("SELECT * FROM enfants where Id = :id");
+        $req->bindValue(':id', $id);
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function PrintlistChilds(int $id){
+        return $this->listChild($id);
+    }
 
     private function Nounou() {
         echo "<div class='role-container'>";
@@ -45,11 +58,11 @@ class Dashboard extends Bdd{
         $prenom = $session->GetPrenom();
         echo "<div class='Dashboard'>";
         echo "<h2>Bienvenue $nom $prenom </h2>";
-        if($session->GetRole() == "nounou"){
-            $this->Nounou();
-        }else{
-            $this->Parent();
-        }
+            if($session->GetRole() == "nounou"){
+                $this->Nounou();
+            }else{
+                $this->Parent();
+            }
         echo "</div>";
         
     }
@@ -80,5 +93,13 @@ class Dashboard extends Bdd{
         $req->bindValue(':parent_id', $parent_id);
         $req->execute();
         return $req->fetchAll();
+    }
+    private function getDisponibility(){
+        $req = $this->Connect()->prepare("SELECT S.*,I.nom,I.prenom FROM disponibilités AS S INNER JOIN identifiant AS I ON S.Id = I.Id WHERE S.Jour_end IS NULL OR S.Jour_end > NOW()");
+        $req->execute();
+        return $req->fetchAll();
+    }
+    public function printDisponibility(){
+        return $this->getDisponibility();
     }
 }
