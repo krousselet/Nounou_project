@@ -7,7 +7,7 @@ if(!$session->isLogin()){
 }
 if(isset($_GET['test'])){
     if($_GET['test'] == 'true'){
-        $_POST['action'] = 'getPlaning';
+        $_POST['action'] = 'getDisponibility';
     }
 }
 if(isset($_POST['action'])){
@@ -37,7 +37,15 @@ if(isset($_POST['action'])){
             // return json_encode($result);
             echo json_encode([$result,$session->GetNom()." ".$session->GetPrenom()]);
             break;
-        case 'deletePlaning':
+        case 'getListChild':
+            $result = $dashboard->PrintlistChilds($session->GetId());
+            echo json_encode($result);
+            break;
+        case 'getDisponibility':
+            $result = $dashboard->printDisponibility();
+            echo json_encode($result);
+            break;
+        case 'getCalendar':
         default:
             break;
     }
