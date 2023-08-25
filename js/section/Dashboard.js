@@ -4,7 +4,6 @@ import { panda } from "https://pandatown.fr/lib/pandalib.js";
 // import timeGridPlugin from '/node_modules/@fullcalendar/timegrid/index.js';
 // import listPlugin from '/node_modules/@fullcalendar/list/index.js';
 
-
 const page = {
   app: null,
   init : function (app) {
