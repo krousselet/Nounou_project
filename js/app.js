@@ -63,7 +63,7 @@ let app = {
                     // if (typeof type !== 'undefined') {
                     //     this.page.init(type)
                     // } else {
-                        this.page.init(app)
+                    this.page.init(app)
                     // }
                 }, 500);
             });
