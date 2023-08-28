@@ -153,26 +153,26 @@ const page = {
         }
       });
 
-      panda.ajax('./ajax/dashboard.php',{ action: 'getPlaning'}, (data) => {
-        let planing = JSON.parse(data);
-        let lists = [];
-        if(planing[0].length > 0){
-          planing[0].forEach(element => {
-            let list = {title: 'Disponibilité - '+planing[1]};
-            list.startRecur = element['jour_start'];
-            list.startTime = element['heure_debut'];
-            list.endTime = element['heure_fin'];
-            if(element['repeater'] == 1){
-              let day = new Date(element['jour_start']).getDay();
-              list.daysOfWeek = [day];
-              if(element['Jour_end'] != null){
-                list.endRecur = element['Jour_end'];
-              }
+    panda.ajax('./ajax/dashboard.php', { action: 'getPlaning' }, (data) => {
+      let planing = JSON.parse(data);
+      let lists = [];
+      if (planing[0].length > 0) {
+        planing[0].forEach(element => {
+          let list = { title: 'Disponibilité - ' + planing[1] };
+          list.startRecur = element['jour_start'];
+          list.startTime = element['heure_debut'];
+          list.endTime = element['heure_fin'];
+          if (element['repeater'] == 1) {
+            let day = new Date(element['jour_start']).getDay();
+            list.daysOfWeek = [day];
+            if (element['Jour_end'] != null) {
+              list.endRecur = element['Jour_end'];
             }
-            // panda.util.log(JSON.stringify(list), "gold");
-            calendar.addEvent(list);
-          });
-          calendar.render();
+          }
+          // panda.util.log(JSON.stringify(list), "gold");
+          calendar.addEvent(list);
+        });
+        calendar.render();
 
           return;
         }else{
@@ -291,10 +291,12 @@ const page = {
         })
         document.getElementById('calendar').style.display = 'none';
 
-      });
-      
-      
-    }
+    });
+
+
+  }
+
+
 }
 
 export { page };
