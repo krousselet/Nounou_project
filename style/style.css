@@ -9,6 +9,15 @@ html {
   align-items: center;
 }
 
+.text-shadow {
+  text-shadow: 1px 1px 2px #662b09;
+  text-decoration: underline;
+}
+
+.color-font-dark {
+  color: #662b09;
+}
+
 .btn-primary,
 .bg-primary {
   background-color: #cd6130 !important;
@@ -55,6 +64,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  font-family: "Comfortaa";
 }
 body body::before {
   content: "";
@@ -320,6 +330,19 @@ div {
   }
 }
 
+.reserve-form input ~ label {
+  margin: 2px;
+  padding: 10px;
+  background-color: #ff8945;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #ff6c17;
+}
+.reserve-form input:checked + label {
+  border: 2px solid white;
+  background-color: #ff6c17;
+}
+
 #bienvenu {
   font-size: 8rem;
   font-weight: bold;
@@ -353,6 +376,9 @@ div {
   margin-top: 15vh;
   gap: 15vh;
 }
+.accueil-welcome-box .accueil-text-welcome-text {
+  height: 355px !important;
+}
 .accueil-welcome-box .accueil-img {
   border-radius: 40px;
 }
@@ -384,6 +410,11 @@ div {
   background-color: hsla(0, 0%, 100%, 0.9);
   color: #662b09;
 }
+@media (max-width: 1200px) {
+  .accueil-welcome-box .accueil-triple-text {
+    font-size: 1rem;
+  }
+}
 .accueil-welcome-box .accueil-triple-box {
   justify-content: space-around;
   min-height: 20vh;
@@ -395,43 +426,15 @@ div {
   animation: shadow-pop-tr-left 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 
-@keyframes shadow-pop-tr-left {
-  0% {
-    box-shadow: 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17;
-    transform: translateX(0) translateY(0);
-  }
-  100% {
-    box-shadow: 1px -1px #ff6c17, 2px -2px #ff6c17, 3px -3px #ff6c17, 4px -4px #ff6c17, 5px -5px #ff6c17, 6px -6px #ff6c17, 7px -7px #ff6c17, 8px -8px #ff6c17;
-    transform: translateX(-8px) translateY(8px);
-  }
-}
 .shadow-pop-tl-right {
   animation: shadow-pop-tl-right 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 
-@keyframes shadow-pop-tl-right {
-  0% {
-    box-shadow: 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17;
-    transform: translateX(0) translateY(0);
-  }
-  100% {
-    box-shadow: -1px -1px #ff6c17, -2px -2px #ff6c17, -3px -3px #ff6c17, -4px -4px #ff6c17, -5px -5px #ff6c17, -6px -6px #ff6c17, -7px -7px #ff6c17, -8px -8px #ff6c17;
-    transform: translateX(8px) translateY(8px);
-  }
-}
 .slide-bottom {
   transform: translateY(-200px);
   animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
 }
 
-@keyframes slide-bottom {
-  0% {
-    transform: translateY(-200px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 .navbar {
   background-color: #ff6c17 !important;
 }
@@ -477,14 +480,18 @@ div {
   align-items: center;
 }
 
+.profil-height {
+  height: 90vh;
+}
+
 .mdp {
   transition: 0.5s ease;
 }
 
 .mdp:hover {
   background-color: rgb(0, 128, 0);
-  color: black;
-  transition: 0.5s ease;
+  color: white;
+  transition: 0.3s ease;
 }
 
 /************************* KEVIN *************************/

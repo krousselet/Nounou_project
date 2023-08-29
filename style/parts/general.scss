@@ -8,6 +8,15 @@ html {
   align-items: center;
 }
 
+.text-shadow {
+  text-shadow: 1px 1px 2px #662b09;
+  text-decoration: underline;
+}
+
+.color-font-dark {
+  color: #662b09;
+}
+
 .btn-primary,
 .bg-primary {
   background-color: #cd6130 !important;
@@ -22,7 +31,7 @@ html {
 }
 
 .btn {
-  transition: .5 ease;
+  transition: 0.5 ease;
 }
 
 .btn:active {
@@ -42,7 +51,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // font-family: "Comfortaa";
 }
 
 body {
@@ -55,6 +63,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  font-family: "Comfortaa";
 
   body::before {
     content: "";
@@ -63,7 +72,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
     z-index: 50;
     pointer-events: none;
     opacity: 0;
@@ -83,7 +96,7 @@ a.nav-link {
     background-color: white;
     left: 50%;
     top: 80%;
-    transition: .5s ease;
+    transition: 0.5s ease;
     transform: translateX(-50%);
 
     @media (max-width: 991px) {
@@ -93,7 +106,7 @@ a.nav-link {
 
   &:hover::before {
     width: 100%;
-    transition: .5s ease;
+    transition: 0.5s ease;
   }
 }
 
@@ -102,9 +115,6 @@ a.nav-link {
 //     height: 1px;
 //   }
 // }
-
-
-
 
 input {
   width: 100%;
