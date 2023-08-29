@@ -12,8 +12,50 @@
   align-items: center;
   min-height: 300px;
 
+  .btn_d_Charge,
+  .btn_d_addChild {
+    animation: move 1s .2s ease forwards;
+  }
+
+  .btn_d_calendar,
+  .btn_d_Facture {
+    animation: move-reverse 1s .2s ease forwards;
+  }
+
+  .btn_d_Charge,
+  .btn_d_addChild,
+  .btn_d_calendar,
+  .btn_d_Facture {
+    position: relative;
+    /* Positioning context for pseudo-element */
+    padding-left: 30px;
+    /* To give space for the checkbox */
+  }
+
+  .btn_d_Charge::before,
+  .btn_d_addChild::before,
+  .btn_d_calendar::before,
+  .btn_d_Facture::before {
+    content: '✓';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn_d_Charge:hover::before,
+  .btn_d_addChild:hover::before,
+  .btn_d_calendar:hover::before,
+  .btn_d_Facture:hover::before {
+    opacity: 1;
+  }
+
   button {
     width: 200px;
+
+
   }
 
   h1::after {
@@ -28,6 +70,7 @@
 }
 
 .Dashboard {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -40,7 +83,7 @@
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.291);
   outline: 2px solid var(--bs-primary);
   padding: 20px;
-
+  animation: reveal .5s ease forwards;
 
 
   h2::after {

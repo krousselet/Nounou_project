@@ -47,7 +47,7 @@ if(isset($_POST['action'])){
             break;
         case 'addReservation':
             $dashboard->addReservation($_POST['Id'], $_POST['allweek'], $_POST['children']);
-            var_dump($_POST);
+            // var_dump($_POST);
             break;
         default:
             break;

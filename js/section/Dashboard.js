@@ -103,55 +103,76 @@ const page = {
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,dayGridWeek,listWeek'
+          right: 'dayGridMonth,timeGridWeek'
         },
         locale: 'fr',
         events: [],
-        // dateClick: function(info) {
-        //     modal.style.display = 'block';
-        //     calendarEl.style.display = 'none';
-        //     var eventDateInput = document.getElementById('eventDate');
-        //     eventDateInput.value = info.dateStr;
-        // },
         select: function(info) {
           modal.style.display = 'block';
           calendarEl.style.display = 'none';
-          if(info.startStr && info.endStr){
-            var eventDateInput = document.getElementById('eventDate');
+          if(info.startStr == info.endStr){
+            var eventDateInput = document.getElementById('input[name=eventDate]');
             eventDateInput.value = info.startStr;
           }else{
-            var eventDateInput = document.getElementById('eventDate');
-            const datin = new Date(info.startStr);
-            const datou = new Date(info.endStr);
-            console.log(datin, datou);
-            eventDateInput.value = datin.getFullYear()+'-'+(datin.getMonth()+1)+'-'+datin.getDate();
-            document.querySelector('input[name=eventDateStart]').value = datin.getHours+':'+datin.getMinutes;
-            document.querySelector('input[name=eventDateEnd]').value = datou.getHours+':'+datou.getMinutes;
+            var eventDateInput = document.querySelector('input[name=eventDate]');
+            // console.log("date",info.start.getFullYear()+'-'+(info.start.getMonth()+1)+'-'+info.start.getDate());
+            let c_1 = info.start.getFullYear()+'-';
+            if(info.start.getMonth() < 10){
+              c_1 += '0';
+            }
+            c_1 += (info.start.getMonth()+1)+'-';
+            if(info.start.getDate() < 10){
+              c_1 += '0';
+            }
+            c_1 += info.start.getDate();
+            eventDateInput.value = c_1;
+            // console.log(eventDateInput.value);
+            let h_1 = "";
+            if(info.start.getHours() < 10){
+              h_1 += '0';
+            }
+            h_1 += info.start.getHours();
+            let m_1 = "";
+            if(info.start.getMinutes() < 10){
+              m_1 += '0';
+            }
+            m_1 += info.start.getMinutes();
+            let h_2 = "";
+            if(info.end.getHours() < 10){
+              h_2 += '0';
+            }
+            h_2 += info.end.getHours();
+            let m_2 = "";
+            if(info.end.getMinutes() < 10){
+              m_2 += '0';
+            }
+            m_2 += info.end.getMinutes();
+            document.querySelector('input[name=eventDateStart]').value = h_1+':'+m_1;
+            document.querySelector('input[name=eventDateEnd]').value = h_2+':'+m_2;
           }
-          // alert('selected ' + info.startStr + ' to ' + info.endStr);
         }
       });
 
-      panda.ajax('./ajax/dashboard.php',{ action: 'getPlaning'}, (data) => {
-        let planing = JSON.parse(data);
-        let lists = [];
-        if(planing[0].length > 0){
-          planing[0].forEach(element => {
-            let list = {title: 'Disponibilité - '+planing[1]};
-            list.startRecur = element['jour_start'];
-            list.startTime = element['heure_debut'];
-            list.endTime = element['heure_fin'];
-            if(element['repeater'] == 1){
-              let day = new Date(element['jour_start']).getDay();
-              list.daysOfWeek = [day];
-              if(element['Jour_end'] != null){
-                list.endRecur = element['Jour_end'];
-              }
+    panda.ajax('./ajax/dashboard.php', { action: 'getPlaning' }, (data) => {
+      let planing = JSON.parse(data);
+      let lists = [];
+      if (planing[0].length > 0) {
+        planing[0].forEach(element => {
+          let list = { title: 'Disponibilité - ' + planing[1] };
+          list.startRecur = element['jour_start'];
+          list.startTime = element['heure_debut'];
+          list.endTime = element['heure_fin'];
+          if (element['repeater'] == 1) {
+            let day = new Date(element['jour_start']).getDay();
+            list.daysOfWeek = [day];
+            if (element['Jour_end'] != null) {
+              list.endRecur = element['Jour_end'];
             }
-            // panda.util.log(JSON.stringify(list), "gold");
-            calendar.addEvent(list);
-          });
-          calendar.render();
+          }
+          // panda.util.log(JSON.stringify(list), "gold");
+          calendar.addEvent(list);
+        });
+        calendar.render();
 
           return;
         }else{
@@ -188,7 +209,7 @@ const page = {
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,listWeek'
+          right: 'dayGridMonth,timeGridWeek'
         },
         nowIndicator: true,
         locale: 'fr',
@@ -213,7 +234,8 @@ const page = {
               }
             }
             list.id = element.Id_Disponibilités;
-            panda.util.log(JSON.stringify(list), "gold");
+            list.name = element.nom+' '+element.prenom;
+            // panda.util.log(JSON.stringify(list), "gold");
             calendar.addEvent(list);
           });
           calendar.render();
@@ -227,14 +249,17 @@ const page = {
     ValidReserv: function(info) {
       // panda.util.log(JSON.stringify(info), "dodgerblue");
       let event = info.event; // content title start end and Id_Disponibilités(id)
-      panda.util.log(JSON.stringify(event), "dodgerblue");
+      // panda.util.log(JSON.stringify(event), "dodgerblue");
       let blur = document.querySelector('.blur');
       // form choix des plusieure enfant et si tout les semaines
       let form = panda.util.newelem('form',{"className":"form-group reserve-form"});
       panda.ajax("./ajax/dashboard.php", {"action":"getListChild"}, (data) => { 
         let childs = JSON.parse(data);
+        // panda.util.log(JSON.stringify(info), "dodgerblue");
+
         form.appendChild(panda.util.newelem('h1', {textContent: "Valiation de la réservation",className: "fs-5 text-center mt-2 mb-2"}));
         form.appendChild(panda.util.newelem('p', {textContent: "Veuillez choisir les enfants de la réservation.",className: "fs-5 text-center mt-2 mb-2"}));
+        form.appendChild(panda.util.newelem('p', {textContent: "Nounou : "+event.extendedProps.name, className: "fs-5 text-center mt-2 mb-2"}));
         form.appendChild(panda.util.newelem('input',{"type":"hidden","name":"Id","value":event.id}));
         childs.forEach(element => {
           form.appendChild(panda.util.newelem('input',{"type":"checkbox","id":"child_"+element.Id_Enfants,"name":"child_"+element.Id_Enfants,"style":"display:none"}));
@@ -248,27 +273,30 @@ const page = {
         blur.appendChild(form);
         validbutton.addEventListener('click',(e) => {
           e.preventDefault();
-          panda.util.log(JSON.stringify(e),"orange");
+          // panda.util.log(JSON.stringify(e),"orange");
           let children = [];
           childs.forEach(element => {
             if(document.getElementById('child_'+element.Id_Enfants).checked){
               children.push(element.Id_Enfants);
             }
-          })
-          panda.util.log(JSON.stringify(children),"orange");
+          });
+          // panda.util.log(JSON.stringify(children),"orange");
           panda.ajax("./ajax/dashboard.php", {"action":"addReservation","Id":event.id,"allweek":document.getElementById('allweek').checked,"children":children},(data) => {
             page.app.base.updatepage("Dashboard");
           });
+
           // panda.ajax("./ajax/dashboard.php", {"action":"addReservation","Id":event.id,"allweek":document.getElementById('allweek').checked}, (data) => {
           //   this.app.base.updatepage("Dashboard");
           // });
         })
         document.getElementById('calendar').style.display = 'none';
 
-      });
-      
-      
-    }
+    });
+
+
+  }
+
+
 }
 
 export { page };

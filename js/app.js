@@ -11,7 +11,7 @@ let app = {
             let login = document.querySelector('nav .btn_login');
             let logout = document.querySelector('nav .btn_logout');
             let profil = document.querySelector('nav .btn_profil');
-            console.log(profil);
+            // console.log(profil);
             if (login) {
                 login.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -63,7 +63,7 @@ let app = {
                     // if (typeof type !== 'undefined') {
                     //     this.page.init(type)
                     // } else {
-                        this.page.init(app)
+                    this.page.init(app)
                     // }
                 }, 500);
             });
@@ -72,7 +72,7 @@ let app = {
     page: null,
 }
 // app.base.updatepage('Accueil');
-import("./section/Acceuil.js").then((module) => {
+import("./section/Accueil.js").then((module) => {
     let newpage = module.page;
     app.page = newpage;
     setTimeout(() => {
