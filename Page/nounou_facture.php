@@ -31,11 +31,17 @@ $margin = 10;
 
 
 $tableWidth = 40 + 40 + 50;
+$numRows = $result->rowCount();
+$tableHeight = 10 * $numRows;
+$centerX = 105;
+$centerY = 148.5;
+$startX = $centerX - ($tableWidth / 2);
+$startY = $centerY - ($tableHeight / 2);
 
 $xPos = ($pageWidth - $tableWidth) / 2;
 
 
-$pdf->SetX($xPos);
+$pdf->SetXY($startX, $startY);
 
 // data to keep track of the total amount of time for the provided
 
