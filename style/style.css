@@ -9,6 +9,15 @@ html {
   align-items: center;
 }
 
+.text-shadow {
+  text-shadow: 1px 1px 2px #662b09;
+  text-decoration: underline;
+}
+
+.color-font-dark {
+  color: #662b09;
+}
+
 .btn-primary,
 .bg-primary {
   background-color: #cd6130 !important;
@@ -55,6 +64,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  font-family: "Comfortaa";
 }
 body body::before {
   content: "";
@@ -326,6 +336,19 @@ div {
   }
 }
 
+.reserve-form input ~ label {
+  margin: 2px;
+  padding: 10px;
+  background-color: #ff8945;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #ff6c17;
+}
+.reserve-form input:checked + label {
+  border: 2px solid white;
+  background-color: #ff6c17;
+}
+
 #bienvenu {
   font-size: 8rem;
   font-weight: bold;
@@ -359,6 +382,9 @@ div {
   margin-top: 15vh;
   gap: 15vh;
 }
+.accueil-welcome-box .accueil-text-welcome-text {
+  height: 355px !important;
+}
 .accueil-welcome-box .accueil-img {
   border-radius: 40px;
 }
@@ -389,6 +415,11 @@ div {
   padding: 8px;
   background-color: hsla(0, 0%, 100%, 0.9);
   color: #662b09;
+}
+@media (max-width: 1200px) {
+  .accueil-welcome-box .accueil-triple-text {
+    font-size: 1rem;
+  }
 }
 .accueil-welcome-box .accueil-triple-box {
   justify-content: space-around;
@@ -455,14 +486,18 @@ div {
   align-items: center;
 }
 
+.profil-height {
+  height: 90vh;
+}
+
 .mdp {
   transition: 0.5s ease;
 }
 
 .mdp:hover {
   background-color: rgb(0, 128, 0);
-  color: black;
-  transition: 0.5s ease;
+  color: white;
+  transition: 0.3s ease;
 }
 
 /************************* KEVIN *************************/

@@ -54,3 +54,18 @@
     width: 300px;
   }
 }
+
+.reserve-form {
+  input ~ label {
+    margin: 2px;
+    padding: 10px;
+    background-color: #ff8945;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid #ff6c17;
+  }
+  input:checked + label {
+    border: 2px solid white;
+    background-color: #ff6c17;
+  }
+}
