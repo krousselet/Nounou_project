@@ -17,21 +17,25 @@
     animation: move 1s .2s ease forwards;
   }
 
+  .btn_d_listChild,
+  .btn_d_DispoNounou,
   .btn_d_calendar,
   .btn_d_Facture {
     animation: move-reverse 1s .2s ease forwards;
   }
 
+  .btn_d_DispoNounou,
+  .btn_d_listChild,
   .btn_d_Charge,
   .btn_d_addChild,
   .btn_d_calendar,
   .btn_d_Facture {
     position: relative;
-    /* Positioning context for pseudo-element */
     padding-left: 30px;
-    /* To give space for the checkbox */
   }
 
+  .btn_d_DispoNounou::before,
+  .btn_d_listChild::before,
   .btn_d_Charge::before,
   .btn_d_addChild::before,
   .btn_d_calendar::before,
@@ -45,6 +49,8 @@
     transition: opacity 0.2s ease;
   }
 
+  .btn_d_DispoNounou:hover::before,
+  .btn_d_listChild:hover::before,
   .btn_d_Charge:hover::before,
   .btn_d_addChild:hover::before,
   .btn_d_calendar:hover::before,

@@ -160,19 +160,23 @@ div {
 .role-container .btn_d_addChild {
   animation: move 1s 0.2s ease forwards;
 }
+.role-container .btn_d_listChild,
+.role-container .btn_d_DispoNounou,
 .role-container .btn_d_calendar,
 .role-container .btn_d_Facture {
   animation: move-reverse 1s 0.2s ease forwards;
 }
+.role-container .btn_d_DispoNounou,
+.role-container .btn_d_listChild,
 .role-container .btn_d_Charge,
 .role-container .btn_d_addChild,
 .role-container .btn_d_calendar,
 .role-container .btn_d_Facture {
   position: relative;
-  /* Positioning context for pseudo-element */
   padding-left: 30px;
-  /* To give space for the checkbox */
 }
+.role-container .btn_d_DispoNounou::before,
+.role-container .btn_d_listChild::before,
 .role-container .btn_d_Charge::before,
 .role-container .btn_d_addChild::before,
 .role-container .btn_d_calendar::before,
@@ -185,6 +189,8 @@ div {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
+.role-container .btn_d_DispoNounou:hover::before,
+.role-container .btn_d_listChild:hover::before,
 .role-container .btn_d_Charge:hover::before,
 .role-container .btn_d_addChild:hover::before,
 .role-container .btn_d_calendar:hover::before,
@@ -395,43 +401,15 @@ div {
   animation: shadow-pop-tr-left 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 
-@keyframes shadow-pop-tr-left {
-  0% {
-    box-shadow: 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17;
-    transform: translateX(0) translateY(0);
-  }
-  100% {
-    box-shadow: 1px -1px #ff6c17, 2px -2px #ff6c17, 3px -3px #ff6c17, 4px -4px #ff6c17, 5px -5px #ff6c17, 6px -6px #ff6c17, 7px -7px #ff6c17, 8px -8px #ff6c17;
-    transform: translateX(-8px) translateY(8px);
-  }
-}
 .shadow-pop-tl-right {
   animation: shadow-pop-tl-right 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 
-@keyframes shadow-pop-tl-right {
-  0% {
-    box-shadow: 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17, 0 0 #ff6c17;
-    transform: translateX(0) translateY(0);
-  }
-  100% {
-    box-shadow: -1px -1px #ff6c17, -2px -2px #ff6c17, -3px -3px #ff6c17, -4px -4px #ff6c17, -5px -5px #ff6c17, -6px -6px #ff6c17, -7px -7px #ff6c17, -8px -8px #ff6c17;
-    transform: translateX(8px) translateY(8px);
-  }
-}
 .slide-bottom {
   transform: translateY(-200px);
   animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
 }
 
-@keyframes slide-bottom {
-  0% {
-    transform: translateY(-200px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 .navbar {
   background-color: #ff6c17 !important;
 }
