@@ -59,6 +59,30 @@ class Session extends Bdd{
         $_SESSION['Id'] = $user['Id'];
     }
 
+    private function testloacalpass($passtest){
+        if(password_verify("Panda".$passtest."Town", $this->user['mot_de_passe'])){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    private function changepass($new,$id){
+        $req = $this->Connect()->prepare("UPDATE identifiant SET mot_de_passe = ? WHERE Id = ?");
+        $hashedPassword = password_hash($new, PASSWORD_DEFAULT);
+        $req->execute(array($hashedPassword,$id));
+        return $hashedPassword;
+    }
+
+    public function ChangePasswordProfile($new,$old = null){
+        if($old != null){
+            if(!$this->testloacalpass($old)){
+                return "password incorrect";
+            }else{
+                return $this->changepass($new,$this->user['Id']);
+            }
+        }
+    }
+
 }
 
 ?>

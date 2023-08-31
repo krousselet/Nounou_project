@@ -19,11 +19,15 @@ if(isset($_POST['action'])){
             break;
         case 'login':
             $user = new User();
+            // var_dump($_POST['email']);
+            // var_dump($_POST['password']);
             $result = $user->login($_POST['email'], $_POST['password']);
+            // $result = false;
             if($result == false){
                 echo "false";
                 break;
             }
+            // var_dump($result);
             $session = new Session();
             $session->Login($result);
             echo "true";
@@ -32,6 +36,28 @@ if(isset($_POST['action'])){
             $session = new Session();
             $session->Logout();
             echo "true";
+            break;
+        case 'reset_sendmail':
+            $user = new User();
+            $result = $user->reset_sendmail($_POST['mail']);
+            echo "true";
+            break;
+        case 'reset_checkCode':
+            $user = new User();
+            $result = $user->reset_checkCode($_POST['mail'], $_POST['code']);
+            echo $result;
+            break;
+        case'reset_password':
+            $user = new User();
+            $result = $user->reset_password($_POST['mail'],$_POST['code'], $_POST['pass']);
+            echo $result;
+            // echo password_verify("Panda".$_POST['pass']."Town", $result);
+            break;
+        case 'change_password':
+            $session = new Session();
+            // var_dump($session->)
+            
+            echo $session->ChangePasswordProfile($_POST['newpass'],$_POST['oldpass']);;
             break;
         default:
             break;
