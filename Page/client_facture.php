@@ -18,24 +18,35 @@ try {
 
 $facture = new Facture();
 
+// FACTURE PART
+
 $query =
     "SELECT R.*, E.*, I.*, I.nom AS ParentNom, I.prenom AS ParentPrenom, E.nom AS EnfantNom, E.prenom AS EnfantPrenom
-    FROM `réservations` AS R JOIN `enfants` AS E ON R.Id_Enfants = E.Id_Enfants
+    FROM `réservations` AS R 
+    JOIN `enfants` AS E ON R.Id_Enfants = E.Id_Enfants
     JOIN `identifiant` AS I ON E.Id = I.Id
-    WHERE R.dates < NOW() AND STR_TO_DATE(R.dates, '%Y-%m-%d') > DATE_ADD(NOW(), INTERVAL -30 DAY);";
+    WHERE R.accepted = 1 AND STR_TO_DATE(R.date_start, '%Y-%m-%d') > DATE_ADD(NOW(), INTERVAL -30 DAY);";
 
 $result = $pdo->query($query);
+
+// STYLING
 
 $pageWidth = 210;
 $margin = 10;
 
 
 $tableWidth = 40 + 40 + 50;
+$numRows = $result->rowCount();
+$tableHeight = 10 * $numRows;
+$centerX = 105;
+$centerY = 148.5;
+$startX = $centerX - ($tableWidth / 2);
+$startY = $centerY - ($tableHeight / 2);
 
 $xPos = ($pageWidth - $tableWidth) / 2;
 
 
-$pdf->SetX($xPos);
+$pdf->SetXY($startX, $startY);
 
 // data to keep track of the total amount of time for the provided
 
@@ -67,6 +78,7 @@ $pdf->SetY(-35);
 $pdf->Cell(0, 10, 'Facture pour ' . date("F, Y"), 0, 0, 'C');
 
 $pdf->Output();
+
 /*
 
     Always generate the bill for the previous month
